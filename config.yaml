@@ -1,0 +1,53 @@
+baseurl: "/"
+languageCode: "zh-cn"
+title: "医生学习笔记"
+theme: "hugo-xmag"
+googleAnalytics: ""
+disqusShortname: ""
+ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
+preserveTaxonomyNames: true
+footnotereturnlinkcontents: "↩"
+hasCJKLanguage: true
+enableEmoji: true
+paginate: 6
+
+permalinks:
+  post: ":year-:month-:day-:slug/"
+
+menu:
+  main:
+    - name: 主页
+      url: ""
+      weight: 1
+    - name: 关于
+      url: about/
+      weight: 2
+    - name: 分类
+      url: categories/
+      weight: 3
+    - name: 标签
+      url: tags/
+      weight: 4
+    - name: 订阅
+      url: index.xml
+
+params:
+  description: "个人网站用于记录学习过程和心得"
+  footer: "&copy; [Qiong Chen](https://chenq.site) 2023 - NOW | [Github](https://github.com/gigu003)"
+  github_edit: "https://github.com/yihui/hugo-xmag/edit/master/exampleSite/content/"
+  summary_length: 200
+  text:
+    back: "&larr; 返回主页"
+    edit: "编辑此页 &rarr;"
+    truncated: "&hellip;"
+    about_author: "关于作者"
+  banner:
+    src: "images/header.png"
+    alt: "医生学习笔记"
+
+markup:
+  highlight:
+    codeFences: false
+  goldmark:
+    renderer:
+      unsafe: true
