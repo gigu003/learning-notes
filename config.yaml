@@ -34,13 +34,14 @@ menu:
 params:
   description: "个人网站用于记录学习过程和心得"
   footer: "&copy; [Qiong Chen](https://chenq.site) 2023 - NOW | [Github](https://github.com/gigu003)"
-  github_edit: "https://github.com/yihui/hugo-xmag/edit/master/exampleSite/content/"
+  github_edit: "https://github.com/gigu003/learning-notes/edit/main/content/"
   summary_length: 200
   text:
     back: "&larr; 返回主页"
     edit: "编辑此页 &rarr;"
     truncated: "&hellip;"
     about_author: "关于作者"
+    uncategorized: "未分类"
   banner:
     src: "images/header.png"
     alt: "医生学习笔记"
