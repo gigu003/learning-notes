@@ -43,7 +43,7 @@ params:
     about_author: "关于作者"
     uncategorized: "未分类"
   banner:
-    src: "images/header.png"
+    src: "https://cdn.jsdelivr.net/gh/gigu003/db/images/header.jpg"
     alt: "医生学习笔记"
 
 markup:
