@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>浏览器 on 医生学习笔记</title>
+    <link>/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/</link>
+    <description>Recent content in 浏览器 on 医生学习笔记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 05 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HTML&#43;CSS基础知识</title>
+      <link>/2023-10-05-html-css/</link>
+      <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/2023-10-05-html-css/</guid>
+      <description>浏览器 学习HTML和CSS肯定和浏览器密切相关，因为所有的HTML都需要有浏览器来渲染和观看。 目前主流的浏览器包括Chrome、Edge、S</description>
+    </item>
+    
+  </channel>
+</rss>

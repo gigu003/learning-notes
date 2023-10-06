@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>陈琼博士 on 医生学习笔记</title>
+    <link>/</link>
+    <description>Recent content in 陈琼博士 on 医生学习笔记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 05 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HP感染和血糖水平之间有关系吗？</title>
+      <link>/2023-10-05-hp/</link>
+      <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/2023-10-05-hp/</guid>
+      <description>最近拿到了某个医院的常规体检数据，变量有年龄、性别、BMI、血压、空腹血糖、糖化血红蛋白、C13和C14等，我们想通过数据做一些探索性的分析</description>
+    </item>
+    
+    <item>
+      <title>HTML&#43;CSS基础知识</title>
+      <link>/2023-10-05-html-css/</link>
+      <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/2023-10-05-html-css/</guid>
+      <description>浏览器 学习HTML和CSS肯定和浏览器密切相关，因为所有的HTML都需要有浏览器来渲染和观看。 目前主流的浏览器包括Chrome、Edge、S</description>
+    </item>
+    
+    <item>
+      <title>为什么学习HTML和CSS</title>
+      <link>/2023-10-05-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AD%A6%E4%B9%A0html%E5%92%8Ccss/</link>
+      <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/2023-10-05-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AD%A6%E4%B9%A0html%E5%92%8Ccss/</guid>
+      <description>自从前几年开始接触hugo静态网站生成工具，开始利用markdown进行博客写作，并制作了个人网站。后来又开始使用blogdown进行博客写</description>
+    </item>
+    
+    <item>
+      <title>关于医生学习笔记</title>
+      <link>/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>医生学习笔记是本人存放学习笔记的地方，医生是一个需要活到老学到老的职业，同时我也喜欢通过网页的形式去分享和记录学习的过程，所以有了本站点的生</description>
+    </item>
+    
+  </channel>
+</rss>

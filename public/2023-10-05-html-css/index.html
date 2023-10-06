@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>HTML&#43;CSS基础知识 | 医生学习笔记</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="page">
+    <nav class="header">
+      <div class="banner">
+<a href="/">
+
+<img src="https://cdn.jsdelivr.net/gh/gigu003/db/images/notes-header.jpg" alt="医生学习笔记" />
+</a>
+</div>
+
+      <div class="head-meta">
+      
+        <span><a href="/">&larr; 返回主页</a></span>
+        <span class="date">2023-10-05</span>
+        
+        
+        
+          
+        
+        
+        
+        <span><a href="https://github.com/gigu003/learning-notes/edit/main/content/post/2023-10-05-html-css/index.md">编辑此页 &rarr;</a></span>
+        
+        
+      
+      </div>
+    </nav>
+
+<div class="container">
+<article>
+<div class="article-meta">
+
+  <div class="categories">
+  
+    <a href="/categories/html&#43;css%E7%AC%94%E8%AE%B0">HTML&#43;CSS笔记</a>
+  
+  </div>
+
+  <h1><span class="title">HTML&#43;CSS基础知识</span></h1>
+
+  
+
+  
+  <p>标签: <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8">浏览器</a>; <a href="/tags/%E7%BD%91%E9%A1%B5">网页</a>; <a href="/tags/html%E6%A0%87%E7%AD%BE">HTML标签</a>
+  </p>
+  
+  
+
+</div>
+
+
+
+<main>
+<h2 id="浏览器">浏览器</h2>
+<p>学习HTML和CSS肯定和浏览器密切相关，因为所有的HTML都需要有浏览器来渲染和观看。</p>
+<p>目前主流的浏览器包括Chrome、Edge、Safari、Firefox、IE、Opera等等，也是目前比较主流的浏览器。</p>
+<p>&gt; 浏览器内核是浏览器的核心，用于处理浏览器所得到的各种资源。</p>
+<ul>
+<li>Chrome： Blink内核</li>
+<li>Safari： webkit内核</li>
+<li>IE： Trident内核</li>
+<li>Firefox： Gecko内核</li>
+<li>Opera： Blink内核</li>
+</ul>
+<p>目前IE浏览器已经停止更新和使用，我们在Windows系统上常见的Edge浏览器使用的是和Chrome一样的Blink内核。</p>
+<h2 id="网页">网页</h2>
+<p>在浏览器地址栏中输入网址：&ldquo;<a href="http://www.chenq.site">www.chenq.site</a>&rdquo;，然后点击回车，我们把打开该地址看到的第一个页面称为<strong>首页</strong>，首页和其他通过网址打开的页面称之为<strong>网页</strong>，一个或多个网页构成了<strong>网站</strong>。</p>
+<p>一个网页有哪些部分组成？一般认为网页要具备<strong>结构+表现+行为</strong>三个方面的要素，HTML构建网页的结构，CSS填充网页的表现、JS(JavaScript)构建网页的行为。</p>
+<h2 id="html是什么">HTML是什么</h2>
+<p>全称为：HpyerText Markup Language</p>
+<p>翻译： <strong>超文本</strong>标记语言</p>
+<p>超文本： 和普通文本比，内容更丰富。</p>
+<p>标记： 文本要想变为超文本，需要用到各种标记符号。</p>
+<p>语言： 每一个标记的写法、读音、使用规则，构成标记语言。</p>
+<h2 id="html标签">HTML标签</h2>
+<blockquote>
+<p>HTML通过使用标签来描述文档的结构和内容，这些标签由尖括号 &lt; 和 &gt; 包围，并且通常成对出现，包括开始标签和结束标签，例如 &lt;tagname&gt;内容&lt;/tagname&gt;。</p>
+</blockquote>
+<p>以下是一些常见的HTML标签及其用途：</p>
+<ul>
+<li>&lt;html&gt;：定义HTML文档的根元素。</li>
+<li>&lt;head&gt;：包含有关文档的元信息，如标题、字符集和链接到外部资源的标签。</li>
+<li>&lt;title&gt;：设置文档的标题，显示在浏览器标签页上。</li>
+<li>&lt;meta&gt;：提供关于文档的元信息，如字符集、作者和描述。</li>
+<li>&lt;link&gt;：用于链接外部资源，通常用于链接样式表（CSS）文件。</li>
+<li>&lt;script&gt;：用于包含JavaScript代码，可以放在文档的头部或主体部分。</li>
+<li>&lt;body&gt;：包含页面的主要内容，如文本、图片、链接和其他元素。</li>
+<li>&lt;h1&gt; - &lt;h6&gt;：定义标题，其中  &lt;h1&gt; 是最高级别的标题， &lt;h6&gt; 是最低级别的标题。</li>
+<li>&lt;p&gt;：定义段落。</li>
+<li>&lt;a&gt;：创建超链接，用于链接到其他页面或资源。</li>
+<li>&lt;img&gt;：插入图像。</li>
+<li>&lt;ul&gt;：创建无序列表。</li>
+<li>&lt;ol&gt;：创建有序列表。</li>
+<li>&lt;li&gt;：定义列表项。</li>
+<li>&lt;div&gt;：用于分组和样式化元素，常用于布局。</li>
+<li>&lt;span&gt;：用于在文本中应用样式或添加行内元素。</li>
+<li>&lt;table&gt;：创建表格。</li>
+<li>&lt;tr&gt;：定义表格的行。</li>
+<li>&lt;td&gt;：定义表格的数据单元格。</li>
+<li>&lt;th&gt;：定义表格的表头单元格。</li>
+<li>&lt;form&gt;：创建表单，用于用户输入。</li>
+<li>&lt;input&gt;：定义表单输入字段，如文本框、复选框和单选按钮。</li>
+<li>&lt;button&gt;：创建按钮。</li>
+<li>&lt;textarea&gt;：创建多行文本输入字段。</li>
+<li>&lt;select&gt;：创建下拉菜单。</li>
+<li>&lt;option&gt;：定义下拉菜单中的选项。</li>
+<li>&lt;label&gt;：为表单元素创建标签。</li>
+<li>&lt;iframe&gt;：嵌入其他网页或文档。</li>
+<li>&lt;audio&gt;：嵌入音频。</li>
+<li>&lt;video&gt;：嵌入视频。</li>
+</ul>
+<p>这只是HTML标签的一小部分，还有许多其他标签用于不同的目的。HTML标签的组合和嵌套可以创建丰富的网页结构和内容。每个标签都有其自己的属性和用法，可以根据需要进行定制。\</p>
+<p>标签又称为元素，是HTML的基本组成单位，标签分为双标签和单标签，标签名不区分大小写，但推荐小写，因为小写更规范。</p>
+<p>双标签形式： &lt;标签名&gt; 内容&lt;/标签名&gt;</p>
+<p>示例： &lt;marquee&gt; 学习代码更容易&lt;/marquee&gt;</p>
+<p>单标签形式： &lt;标签名/&gt; /可以省略。 示例：&lt;input&gt;</p>
+<p>标签之间的关系：并列关系、嵌套关系、可以使用tab键进行缩进。</p>
+<h2 id="标签属性">标签属性</h2>
+<blockquote>
+<p>HTML标签可以具有各种属性，这些属性提供有关标签的额外信息或控制标签的行为。属性通常以名称-值对的形式出现，属性的名称在标签内部以等号 &ldquo;=&rdquo; 连接属性值。</p>
+</blockquote>
+<p>以下是一些常见的HTML标签属性：</p>
+<p>class: 用于为标签定义一个或多个类名，以便在CSS中选择和样式化这些元素。多个类名可以通过空格分隔。</p>
+<pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
+内容
+&lt;/div&gt;
+</code></pre>
+<p>id: 为标签定义唯一的标识符。通常用于JavaScript中查找和操作元素。</p>
+<pre><code class="language-html">&lt;div id=&quot;header&quot;&gt;
+内容
+&lt;/div&gt;
+</code></pre>
+<p>style: 用于为标签指定内联样式，直接应用于该元素。样式属性的值是CSS属性-值对。</p>
+<pre><code class="language-html">&lt;p style=&quot;color: red; font-size: 16px;&quot;&gt;这是红色文本&lt;/p&gt;
+</code></pre>
+<p>src: 用于指定外部资源的URL，如图像的URL或脚本文件的URL。</p>
+<pre><code class="language-html">&lt;img src=&quot;image.jpg&quot; alt=&quot;图片&quot;&gt;
+</code></pre>
+<p>placeholder: 用于为文本输入字段提供占位符文本，提示用户输入内容。</p>
+<pre><code class="language-html">&lt;input type=&quot;text&quot; placeholder=&quot;请输入您的姓名&quot;&gt;
+</code></pre>
+<p>disabled: 用于禁用输入字段、按钮或其他交互元素，阻止用户进行交互。</p>
+<pre><code class="language-html">&lt;button disabled&gt;已禁用的按钮&lt;/button&gt;
+</code></pre>
+<p>这只是一小部分常见的HTML属性。不同的HTML标签具有不同的属性，这些属性可以控制元素的外观、行为和功能。在使用属性时，请确保遵循HTML的语法规则和最佳实践。</p>
+<ul>
+<li>标签属性用于给标签提供附加信息</li>
+<li>可以写在起始标签中或单标签中</li>
+<li>有些特殊的属性，没有属性名，只有属性值，例如&lt;input disabled&gt;</li>
+</ul>
+<blockquote>
+<ol>
+<li>不同的标签，有不同的属性；也有一些通用属性</li>
+<li>属性名、属性值不能乱写，都是W3C规定好的</li>
+<li>属性名、属性值都不区分大小写，但推荐小写</li>
+<li>双引号，也可以写成单引号，甚至不写都行，但还是推荐写双引号</li>
+<li>标签中不要出现同名属性，否则后写的会失效</li>
+</ol>
+</blockquote>
+<h2 id="html基本结构">HTML基本结构</h2>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;网页标题&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- 网页内容在这里 --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>这是一个基本的HTML结构，你可以在 &lt;body&gt; 部分添加各种HTML元素来构建网页的内容，如段落、图像、表格、链接等。根据需要，你可以在 &lt;head&gt; 部分添加更多的元信息和外部资源链接，如CSS样式表和JavaScript文件，以定制和增强你的网页。</p>
+<ul>
+<li>在网页中，如何查看某段结构的具体代码？  点击鼠标右键，选择检查。</li>
+<li><em>检查</em>和<em>查看网页源代码</em>的区别</li>
+</ul>
+<blockquote>
+<ul>
+<li><strong>查看源代码</strong>：看到的是程序员编写的源代码</li>
+<li><strong>检查</strong>：看到的是：经过浏览器<em>处理</em>后的源代码</li>
+</ul>
+<p>日常开发中，<strong>检查</strong>用的最多</p>
+</blockquote>
+
+</main>
+
+
+
+
+
+<nav class="post-nav">
+  <span class="nav-prev"><a href="/2023-10-05-hp/">&larr; HP感染和血糖水平之间有关系吗？</a></span>
+  <span class="nav-next"><a href="/2023-10-05-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%AD%A6%E4%B9%A0html%E5%92%8Ccss/">为什么学习HTML和CSS &rarr;</a></span>
+</nav>
+
+
+
+</article>
+</div>
+
+<script async src="//yihui.org/js/center-img.js"></script>
+
+<footer>
+
+<div class="footer">
+  <ul class="menu">
+    
+    <li><a href="/"><span data-hover="主页">主页</span></a></li>
+    
+    <li><a href="/about/"><span data-hover="关于">关于</span></a></li>
+    
+    <li><a href="/categories/"><span data-hover="分类">分类</span></a></li>
+    
+    <li><a href="/tags/"><span data-hover="标签">标签</span></a></li>
+    
+    <li><a href="/index.xml"><span data-hover="订阅">订阅</span></a></li>
+    
+  </ul>
+  
+  <div class="copyright">© <a href="https://chenq.site">Qiong Chen</a> 2023 - NOW | <a href="https://github.com/gigu003">Github</a></div>
+  
+</div>
+</footer>
+
+
+<script src="//yihui.org/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script>
+hljs.configure({languages: []});
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+</body>
+</html>
+
