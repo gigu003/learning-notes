@@ -1,0 +1,205 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "关于医生学习笔记",
+    "section": "",
+    "text": "医生学习笔记是本人存放学习笔记的地方，医生是一个需要活到老学到老的职业，同时我也喜欢通过网页的形式去分享和记录学习的过程，所以有了本站点的生成，用以记录学习过程。\n如果你对本站点的内容感兴趣欢迎转载，请注明出处即可。\n本站点利用HUGO生成，模板来自于xmag。"
+  },
+  {
+    "objectID": "notes/2023-10-05-html-css/index.html",
+    "href": "notes/2023-10-05-html-css/index.html",
+    "title": "HTML+CSS基础知识",
+    "section": "",
+    "text": "相关内容\n\n为什么学习HTML和CSS\nHTML+CSS基础知识-浏览器-网页-标签\nHTML标签类型"
+  },
+  {
+    "objectID": "notes/2023-10-05-html-css/index.html#浏览器",
+    "href": "notes/2023-10-05-html-css/index.html#浏览器",
+    "title": "HTML+CSS基础知识",
+    "section": "浏览器",
+    "text": "浏览器\n学习HTML和CSS肯定和浏览器密切相关，因为所有的HTML都需要有浏览器来渲染和观看。\n目前主流的浏览器包括Chrome、Edge、Safari、Firefox、IE、Opera等等，也是目前比较主流的浏览器。\n&gt; 浏览器内核是浏览器的核心，用于处理浏览器所得到的各种资源。\n\nChrome： Blink内核\nSafari： webkit内核\nIE： Trident内核\nFirefox： Gecko内核\nOpera： Blink内核\n\n目前IE浏览器已经停止更新和使用，我们在Windows系统上常见的Edge浏览器使用的是和Chrome一样的Blink内核。"
+  },
+  {
+    "objectID": "notes/2023-10-05-html-css/index.html#网页",
+    "href": "notes/2023-10-05-html-css/index.html#网页",
+    "title": "HTML+CSS基础知识",
+    "section": "网页",
+    "text": "网页\n在浏览器地址栏中输入网址：“www.chenq.site”，然后点击回车，我们把打开该地址看到的第一个页面称为首页，首页和其他通过网址打开的页面称之为网页，一个或多个网页构成了网站。\n一个网页有哪些部分组成？一般认为网页要具备结构+表现+行为三个方面的要素，HTML构建网页的结构，CSS填充网页的表现、JS(JavaScript)构建网页的行为。"
+  },
+  {
+    "objectID": "notes/2023-10-05-html-css/index.html#html是什么",
+    "href": "notes/2023-10-05-html-css/index.html#html是什么",
+    "title": "HTML+CSS基础知识",
+    "section": "HTML是什么",
+    "text": "HTML是什么\n全称为：HpyerText Markup Language\n翻译： 超文本标记语言\n超文本： 和普通文本比，内容更丰富。\n标记： 文本要想变为超文本，需要用到各种标记符号。\n语言： 每一个标记的写法、读音、使用规则，构成标记语言。"
+  },
+  {
+    "objectID": "notes/2023-10-05-html-css/index.html#html标签",
+    "href": "notes/2023-10-05-html-css/index.html#html标签",
+    "title": "HTML+CSS基础知识",
+    "section": "HTML标签",
+    "text": "HTML标签\n\nHTML通过使用标签来描述文档的结构和内容，这些标签由尖括号 &lt; 和 &gt; 包围，并且通常成对出现，包括开始标签和结束标签，例如 &lt;tagname&gt;内容&lt;/tagname&gt;。\n\n以下是一些常见的HTML标签及其用途：\n\n&lt;html&gt;：定义HTML文档的根元素。\n&lt;head&gt;：包含有关文档的元信息，如标题、字符集和链接到外部资源的标签。\n&lt;title&gt;：设置文档的标题，显示在浏览器标签页上。\n&lt;meta&gt;：提供关于文档的元信息，如字符集、作者和描述。\n&lt;link&gt;：用于链接外部资源，通常用于链接样式表（CSS）文件。\n&lt;script&gt;：用于包含JavaScript代码，可以放在文档的头部或主体部分。\n&lt;body&gt;：包含页面的主要内容，如文本、图片、链接和其他元素。\n&lt;h1&gt; - &lt;h6&gt;：定义标题，其中 &lt;h1&gt; 是最高级别的标题， &lt;h6&gt; 是最低级别的标题。\n&lt;p&gt;：定义段落。\n&lt;a&gt;：创建超链接，用于链接到其他页面或资源。\n&lt;img&gt;：插入图像。\n&lt;ul&gt;：创建无序列表。\n&lt;ol&gt;：创建有序列表。\n&lt;li&gt;：定义列表项。\n&lt;div&gt;：用于分组和样式化元素，常用于布局。\n&lt;span&gt;：用于在文本中应用样式或添加行内元素。\n&lt;table&gt;：创建表格。\n&lt;tr&gt;：定义表格的行。\n&lt;td&gt;：定义表格的数据单元格。\n&lt;th&gt;：定义表格的表头单元格。\n&lt;form&gt;：创建表单，用于用户输入。\n&lt;input&gt;：定义表单输入字段，如文本框、复选框和单选按钮。\n&lt;button&gt;：创建按钮。\n&lt;textarea&gt;：创建多行文本输入字段。\n&lt;select&gt;：创建下拉菜单。\n&lt;option&gt;：定义下拉菜单中的选项。\n&lt;label&gt;：为表单元素创建标签。\n&lt;iframe&gt;：嵌入其他网页或文档。\n&lt;audio&gt;：嵌入音频。\n&lt;video&gt;：嵌入视频。\n\n这只是HTML标签的一小部分，还有许多其他标签用于不同的目的。HTML标签的组合和嵌套可以创建丰富的网页结构和内容。每个标签都有其自己的属性和用法，可以根据需要进行定制。\n\n标签又称为元素，是HTML的基本组成单位，标签分为双标签和单标签，标签名不区分大小写，但推荐小写，因为小写更规范。\n双标签形式： &lt;标签名&gt; 内容&lt;/标签名&gt;\n示例： &lt;marquee&gt; 学习代码更容易&lt;/marquee&gt;\n单标签形式： &lt;标签名/&gt; /可以省略。 示例：&lt;input&gt;\n标签之间的关系：并列关系、嵌套关系、可以使用tab键进行缩进。"
+  },
+  {
+    "objectID": "notes/2023-10-05-html-css/index.html#标签属性",
+    "href": "notes/2023-10-05-html-css/index.html#标签属性",
+    "title": "HTML+CSS基础知识",
+    "section": "标签属性",
+    "text": "标签属性\n\nHTML标签可以具有各种属性，这些属性提供有关标签的额外信息或控制标签的行为。属性通常以名称-值对的形式出现，属性的名称在标签内部以等号 “=” 连接属性值。\n\n以下是一些常见的HTML标签属性：\nclass: 用于为标签定义一个或多个类名，以便在CSS中选择和样式化这些元素。多个类名可以通过空格分隔。\n&lt;div class=\"container\"&gt;\n内容\n&lt;/div&gt;\nid: 为标签定义唯一的标识符。通常用于JavaScript中查找和操作元素。\n&lt;div id=\"header\"&gt;\n内容\n&lt;/div&gt;\nstyle: 用于为标签指定内联样式，直接应用于该元素。样式属性的值是CSS属性-值对。\n&lt;p style=\"color: red; font-size: 16px;\"&gt;这是红色文本&lt;/p&gt;\nsrc: 用于指定外部资源的URL，如图像的URL或脚本文件的URL。\n&lt;img src=\"image.jpg\" alt=\"图片\"&gt;\nplaceholder: 用于为文本输入字段提供占位符文本，提示用户输入内容。\n&lt;input type=\"text\" placeholder=\"请输入您的姓名\"&gt;\ndisabled: 用于禁用输入字段、按钮或其他交互元素，阻止用户进行交互。\n&lt;button disabled&gt;已禁用的按钮&lt;/button&gt;\n这只是一小部分常见的HTML属性。不同的HTML标签具有不同的属性，这些属性可以控制元素的外观、行为和功能。在使用属性时，请确保遵循HTML的语法规则和最佳实践。\n\n标签属性用于给标签提供附加信息\n可以写在起始标签中或单标签中\n有些特殊的属性，没有属性名，只有属性值，例如&lt;input disabled&gt;\n\n\n\n不同的标签，有不同的属性；也有一些通用属性\n属性名、属性值不能乱写，都是W3C规定好的\n属性名、属性值都不区分大小写，但推荐小写\n双引号，也可以写成单引号，甚至不写都行，但还是推荐写双引号\n标签中不要出现同名属性，否则后写的会失效"
+  },
+  {
+    "objectID": "notes/2023-10-05-html-css/index.html#html基本结构",
+    "href": "notes/2023-10-05-html-css/index.html#html基本结构",
+    "title": "HTML+CSS基础知识",
+    "section": "HTML基本结构",
+    "text": "HTML基本结构\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;网页标题&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;!-- 网页内容在这里 --&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n这是一个基本的HTML结构，你可以在 &lt;body&gt; 部分添加各种HTML元素来构建网页的内容，如段落、图像、表格、链接等。根据需要，你可以在 &lt;head&gt; 部分添加更多的元信息和外部资源链接，如CSS样式表和JavaScript文件，以定制和增强你的网页。\n\n在网页中，如何查看某段结构的具体代码？ 点击鼠标右键，选择检查。\n检查和查看网页源代码的区别\n\n\n\n查看源代码：看到的是程序员编写的源代码\n检查：看到的是：经过浏览器处理后的源代码\n\n日常开发中，检查用的最多"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "医生学习笔记",
+    "section": "",
+    "text": "记录学习，分享知识\n\n\n\n\n\n\n\n\n\n\n\n学习安装配置和使用Oh My Zsh\n\n\n\n\n\n\n\nOh-My-Zsh\n\n\n\n\n\n\n\n\n\n\n\n2023-10-07\n\n\n陈琼\n\n\n\n\n\n\n\n\nHTML基础知识\n\n\n\n\n\n\n\nHTML+CSS笔记\n\n\n\n\n\n\n\n\n\n\n\n2023-10-06\n\n\n陈琼\n\n\n\n\n\n\n\n\nHTML基础知识–HTML标签\n\n\n\n\n\n\n\nHTML+CSS笔记\n\n\n\n\n\n\n\n\n\n\n\n2023-10-06\n\n\n\n\n\n\n\n\nHTML+CSS基础知识\n\n\n\n\n\n\n\nHTML+CSS笔记\n\n\n\n\n\n\n\n\n\n\n\n2023-10-05\n\n\n陈琼\n\n\n\n\n\n\n\n\n为什么学习HTML和CSS\n\n\n\n\n\n\n\nHTML+CSS笔记\n\n\n\n\n\n\n\n\n\n\n\n2023-10-05\n\n\n陈琼\n\n\n\n\n\n\n无匹配项"
+  },
+  {
+    "objectID": "notes/2023-10-07-oh-my-zsh/index.html",
+    "href": "notes/2023-10-07-oh-my-zsh/index.html",
+    "title": "学习安装配置和使用Oh My Zsh",
+    "section": "",
+    "text": "在理解什么什么是Zsh之前，先理解什么是shell。Shell是连接用户和Linux内核的一种应用程序，从而让用户能更加高效、安全、低成本地使用Linux内核。而Z Shell就是其中一种Linux Shell程序，简称Zsh。\n\nMac OS 自带了一些Shell程序，包括：bash、csh、dash、ksh、sh、tcsh和zsh。\n我们可以在Mac OS的Terminal中使用下面的命令查看Mac OS自带的shell程序\ncat /etc/shells\n# List of acceptable shells for chpass(1).\n# Ftpd will not allow users to connect who are not using\n# one of these shells.\n\n/bin/bash\n/bin/csh\n/bin/dash\n/bin/ksh\n/bin/sh\n/bin/tcsh\n/bin/zsh\n我们可以看到输出结果显示的最后一个就是zsh，然后我们可以看看系统里目前安装的zsh版本是哪个版本。\nzsh --version\n\nzsh 5.9 (x86_64-apple-darwin22.0)\nZsh的功能很强大，但是它的配置过于复杂。也正因为如此，才有了Oh My Zsh的诞生。"
+  },
+  {
+    "objectID": "notes/2023-10-07-oh-my-zsh/index.html#什么是zsh",
+    "href": "notes/2023-10-07-oh-my-zsh/index.html#什么是zsh",
+    "title": "学习安装配置和使用Oh My Zsh",
+    "section": "",
+    "text": "在理解什么什么是Zsh之前，先理解什么是shell。Shell是连接用户和Linux内核的一种应用程序，从而让用户能更加高效、安全、低成本地使用Linux内核。而Z Shell就是其中一种Linux Shell程序，简称Zsh。\n\nMac OS 自带了一些Shell程序，包括：bash、csh、dash、ksh、sh、tcsh和zsh。\n我们可以在Mac OS的Terminal中使用下面的命令查看Mac OS自带的shell程序\ncat /etc/shells\n# List of acceptable shells for chpass(1).\n# Ftpd will not allow users to connect who are not using\n# one of these shells.\n\n/bin/bash\n/bin/csh\n/bin/dash\n/bin/ksh\n/bin/sh\n/bin/tcsh\n/bin/zsh\n我们可以看到输出结果显示的最后一个就是zsh，然后我们可以看看系统里目前安装的zsh版本是哪个版本。\nzsh --version\n\nzsh 5.9 (x86_64-apple-darwin22.0)\nZsh的功能很强大，但是它的配置过于复杂。也正因为如此，才有了Oh My Zsh的诞生。"
+  },
+  {
+    "objectID": "notes/2023-10-07-oh-my-zsh/index.html#什么是oh-my-zsh",
+    "href": "notes/2023-10-07-oh-my-zsh/index.html#什么是oh-my-zsh",
+    "title": "学习安装配置和使用Oh My Zsh",
+    "section": "什么是Oh My Zsh",
+    "text": "什么是Oh My Zsh\n下面是Oh My Zsh 官网给出的Oh My ZSH的解释。\n\nOh My Zsh is a delightful, open source, community-driven framework for managing your Zsh configuration. It comes bundled with thousands of helpful functions, helpers, plugins, themes, and a few things that make you shout…\n\nOh My ZSH 是基于ZSH命令行的扩张工具集，提供了丰富的扩展功能。安装Oh My Zsh的前提是安装ZSH，目前版本的Mac 系统默认自动安装了Zsh。"
+  },
+  {
+    "objectID": "notes/2023-10-07-oh-my-zsh/index.html#如何安装",
+    "href": "notes/2023-10-07-oh-my-zsh/index.html#如何安装",
+    "title": "学习安装配置和使用Oh My Zsh",
+    "section": "如何安装",
+    "text": "如何安装\n可以通过curl和wget两种方式来安装。\ncurl安装命令\nsh -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\"\nwget安装命令\nsh -c \"$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)\""
+  },
+  {
+    "objectID": "notes/2023-10-07-oh-my-zsh/index.html#oh-my-zsh常用设置",
+    "href": "notes/2023-10-07-oh-my-zsh/index.html#oh-my-zsh常用设置",
+    "title": "学习安装配置和使用Oh My Zsh",
+    "section": "Oh My ZSH常用设置",
+    "text": "Oh My ZSH常用设置\nZsh的配置文件存在放在用户目录下的.zshrc文件中，如果我们想进行相关的配置的时候，只需要打开该配置文件，然后进行相应的修改即可。\n\n配置主题\nOh My Zsh 有丰富的主题配置，我们可以在主题列表中选择相应的主题，并记住主题的名字。\n我们在终端中打开前面提到的配置文件 .zshrc\nopen ~/.zshrc\n如果你熟悉vim编辑器的话，可以用vim打开\nvim ~/.zshrc\n我们在该配置文件找到 ZSH_THEME 变量明，我们可以看到默认的主题名是robbyrussell，把该名字改成为我们自己想要的主题名称即可。\n# Set name of the theme to load --- if set to \"random\", it will\n# load a random theme each time oh-my-zsh is loaded, in which case,\n# to know which specific one was loaded, run: echo $RANDOM_THEME\n# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes\nZSH_THEME=\"robbyrussell\"\n\n\n命令别名\n我们可以在.zshrc文件中配置alias，可以方便的为其他命令设置别名，可以提高命令的输入效率。\n下面我们列出一些git相关的别名\nalias g='git'\n\nalias ga='git add'\nalias gaa='git add --all'\nalias gapa='git add --patch'\n\nalias gb='git branch'\nalias gba='git branch -a'\nalias gbda='git branch --merged | command grep -vE \"^(\\*|\\s*master\\s*$)\" | command xargs -n 1 git branch -d'\nalias gbl='git blame -b -w'\nalias gbnm='git branch --no-merged'\nalias gbr='git branch --remote'\nalias gbs='git bisect'\nalias gbsb='git bisect bad'\nalias gbsg='git bisect good'\nalias gbsr='git bisect reset'\nalias gbss='git bisect start'\n\nalias gco=\"git checkout\"\nalias gc=\"git commit -m\"\nalias gd='git diff'\nalias gf='git fetch'\nalias gs=\"git status\"\nalias gsm=\"git summary\"\nalias gl=\"git log\"\nalias gm=\"git merge\"\nalias gpl=\"git pull\"\nalias gps=\"git push\"\nalias grv='git remote -v'\nalias grb='git rebase'\n我选择了自己最常用的一些命令设置了别名。\nalias ga='git add'\nalias gaa='git add --all'\nalias gc=\"git commit -m\"\nalias gpl=\"git pull\"\nalias gps=\"git push\"\n\n\n配置插件\nOh My Zsh可以安装丰富的插件，从而实现各种各样的功能，我们在安装好插件之后，需要在.zshrc文件中进行配置，才会起作用，我们相应的插件名称放入plugins=后面的括号中，配置多个插件时，插件名称之间需用空格分开。\nplugins=(git zsh-syntax-highlighting zsh-autosuggestions git-open autojump z)"
+  },
+  {
+    "objectID": "notes/2023-10-07-oh-my-zsh/index.html#常用方法",
+    "href": "notes/2023-10-07-oh-my-zsh/index.html#常用方法",
+    "title": "学习安装配置和使用Oh My Zsh",
+    "section": "常用方法",
+    "text": "常用方法\n\n改变路径\nOh My Zsh 下，改变路径不再使用cd命令，而直接使用下面的方法即可。\n\n\n\n命令\n结果\n\n\n\n\n文件夹/\n\n\n\n..\n回到上一级目录\n\n\n…\n回到上两级目录\n\n\n\\\n回到电脑根目录\n\n\n~\n回到用户根目录\n\n\n-\n回到上一次所在的目录\n\n\n\n\n\ntake命令\n一个三合一命令，穿件一个文件夹，并自动进入该文件夹\n\n\n\n命令\n结果\n\n\n\n\ntake \n下载gzip文件(.gz,.bz2,.xz)，并解压缩\n\n\ntake \n从网络地址（http,ssh）克隆git repo\n\n\ntake&lt;folder&gt;\n建并进入新文件夹\n\n\n\n\nzsh_stats 命令会返回包含前20个命令及执行次数的一个列表\n\n\n\nTAB键自动补全\nTab键自动补全是Oh My Zsh的一大特色，当我们输入一个命令只输入一半时，按下TAB键会自动显示所有可能相关的命令。\n\n\n通配符查询\n\n\n\n命令\n结果\n\n\n\n\nls*.txt\n列出该目录下所有扩展名为txt的文件\n\n\nls**/*.txt\n列出该目录下(包括子目录)的所有txt文件\n\n\nls**/(READ)*.*\n找出所有文件名以READ字符起始的文件\n\n\nls**/*(READ).*\n找出所有文件名以READ字符结尾的的文件\n\n\nls**/*(READ)*.*\n找出所有文件名中包含READ字符的文件\n\n\nls**/*(.)\n只搜索文件\n\n\nls**/*(/)\n只搜索文件夹\n\n\n\n\n\n扩充文件名和路径\n\n\n\n命令\n结果\n\n\n\n\ntouch name–{1..4}.txt\n创建文件name-1.txt,name-2.txt,name-3.txt,name-4.txt\n\n\ntouch name.{css, js, test.js}\n创建具有不同扩展名的文件，name.css，name.js，name.test.js\n\n\ncp folder/name.js{,.bak}\n复制文件并添加扩展名.bak\n\n\ndiff folder/{new,old}/name.js\n查看两个文件的不同\n\n\nmkdir -p {source,build,man,help{/pages,/yelp,/images}}\n创建完整的文件夹结构\n\n\nwgethttp://site.com/folder%7B1,2%7D/pic%7B001,002%7D.jpg\n下载多个文件\n\n\n\n\n\n提取历史命令\n\n!!，两个感叹号可以提取上次执行的命令\n!2，感叹号加数字可以提取前n次执行过的命令"
+  },
+  {
+    "objectID": "notes/2023-10-06-html/index.html",
+    "href": "notes/2023-10-06-html/index.html",
+    "title": "HTML基础知识",
+    "section": "",
+    "text": "特点：注释的内容会被浏览器所忽略，不会呈现到页面中，但源代码中依然可见。\n作用：对代码进行解释和说明。\n写法：\n&lt;!-- 下面的文字只能滚动一次 --&gt;\n&lt;marquee loop=\"1\"&gt;滚动的文字&lt;/marquee&gt;\n\n&lt;!-- 下面的文字可以无限滚动 --&gt;\n&lt;marquee loop=\"1\"&gt;滚动的文字&lt;/marquee&gt;\n\n注释不可以嵌套\n\n快捷键：\nCTRL + /"
+  },
+  {
+    "objectID": "notes/2023-10-06-html/index.html#html注释",
+    "href": "notes/2023-10-06-html/index.html#html注释",
+    "title": "HTML基础知识",
+    "section": "",
+    "text": "特点：注释的内容会被浏览器所忽略，不会呈现到页面中，但源代码中依然可见。\n作用：对代码进行解释和说明。\n写法：\n&lt;!-- 下面的文字只能滚动一次 --&gt;\n&lt;marquee loop=\"1\"&gt;滚动的文字&lt;/marquee&gt;\n\n&lt;!-- 下面的文字可以无限滚动 --&gt;\n&lt;marquee loop=\"1\"&gt;滚动的文字&lt;/marquee&gt;\n\n注释不可以嵌套\n\n快捷键：\nCTRL + /"
+  },
+  {
+    "objectID": "notes/2023-10-06-html/index.html#html文档声明",
+    "href": "notes/2023-10-06-html/index.html#html文档声明",
+    "title": "HTML基础知识",
+    "section": "HTML文档声明",
+    "text": "HTML文档声明\n声明网页类型为HTML5，目前绝大部分网页类型为HTML5。\n&lt;!DOCTYPE html&gt;"
+  },
+  {
+    "objectID": "notes/2023-10-06-html/index.html#字符编码",
+    "href": "notes/2023-10-06-html/index.html#字符编码",
+    "title": "HTML基础知识",
+    "section": "字符编码",
+    "text": "字符编码\nASCII ：大号字母、小写字母、数字、一些符号，共计128个。\nISO 8859-1 ：在ASCII 基础上，扩充了一些希腊字符等，共计是256个。\nGB2312：继续扩充，收录了 6763 个常用汉字、682个字符。\nGBR ：收录了的汉宇和符号达到 20000+，支持繁体中文。\nUTE-8：万国码，包含世界上所有语言的：所有文字与符号。 —— 很常用。\n\n\n原则1：储存时，务必采用合适的字符编码，否则无法储存，数据会丢失！\n原则2：储存时采用哪种方式编码，读取时就必须采用相同方式解码。否则数据能呈现，但数据错乱（乱码）！\n\n\n指定方法：\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"zh-CN\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;title&gt;&lt;HTML字符编码&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  \n&lt;/body&gt;\n&lt;/html&gt;"
+  },
+  {
+    "objectID": "notes/2023-10-06-html/index.html#语言",
+    "href": "notes/2023-10-06-html/index.html#语言",
+    "title": "HTML基础知识",
+    "section": "语言",
+    "text": "语言\n&lt;html lang=\"en\"&gt;"
+  },
+  {
+    "objectID": "notes/2023-10-06-html/index.html#html标准结构",
+    "href": "notes/2023-10-06-html/index.html#html标准结构",
+    "title": "HTML基础知识",
+    "section": "HTML标准结构",
+    "text": "HTML标准结构\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"zh-CN\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;Document&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  \n&lt;/body&gt;\n&lt;/html&gt;"
+  },
+  {
+    "objectID": "notes/2023-10-06-html-layout/index.html",
+    "href": "notes/2023-10-06-html-layout/index.html",
+    "title": "HTML基础知识–HTML标签",
+    "section": "",
+    "text": "标签\n功能\n类型\n\n\n\n\nh1-h6\n标题\n双标签\n\n\np\n段落标签\n双标签\n\n\ndiv\n没有含义，用于整体布局\n双标签\n\n\n\n\nh1 最好写一个，h2-h6能适当多写。\nh1-h6 不允许嵌套\nh1-h6不允许放在p标签里面\np标签里面不允许放h标签、div标签和p标签"
+  },
+  {
+    "objectID": "notes/2023-10-06-html-layout/index.html#排版标签",
+    "href": "notes/2023-10-06-html-layout/index.html#排版标签",
+    "title": "HTML基础知识–HTML标签",
+    "section": "",
+    "text": "标签\n功能\n类型\n\n\n\n\nh1-h6\n标题\n双标签\n\n\np\n段落标签\n双标签\n\n\ndiv\n没有含义，用于整体布局\n双标签\n\n\n\n\nh1 最好写一个，h2-h6能适当多写。\nh1-h6 不允许嵌套\nh1-h6不允许放在p标签里面\np标签里面不允许放h标签、div标签和p标签"
+  },
+  {
+    "objectID": "notes/2023-10-06-html-layout/index.html#语义化标签",
+    "href": "notes/2023-10-06-html-layout/index.html#语义化标签",
+    "title": "HTML基础知识–HTML标签",
+    "section": "语义化标签",
+    "text": "语义化标签\n概念：用特定的标签表达特定的含义。\n原则：标签的默认效果不重要（后期可以通过CSS随便控制效果），语义最重要。\n举例：对于h1标签，效果是文字很大（不重要），语义是网页主要内容（很重要）。\n优势：\n\n代码结构清晰可读性强\n有利于SEO（搜索引擎优化）\n方便设备解析（如屏幕阅读器、盲人阅读器等）"
+  },
+  {
+    "objectID": "notes/2023-10-06-html-layout/index.html#块元素与行内元素",
+    "href": "notes/2023-10-06-html-layout/index.html#块元素与行内元素",
+    "title": "HTML基础知识–HTML标签",
+    "section": "块元素与行内元素",
+    "text": "块元素与行内元素\n\n块级元素：独占一行（排版标签都是块级元素\n行内元素：不独占一行\n\n使用规则：\n\n规则一：块级元素中能写：行内元素、块级元素（几乎什么都能写）\n\n&lt;div&gt;\n    &lt;span&gt;什么都能写&lt;/span&gt;\n    &lt;input type=\"text\"&gt;\n    &lt;div&gt;什么都能写2&lt;/div&gt;\n&lt;/div&gt;\n\n规则二：行内元素中能写：行内元素，但不能写：块级元素\n\n&lt;span&gt;\n    &lt;span&gt;能写&lt;/span&gt;\n    &lt;input type=\"text\"&gt;\n    &lt;span&gt;能写2&lt;/span&gt;\n&lt;/span&gt;\n\n特殊规则： h1-h6 不能互相嵌套\n特殊规则： p标签中不能写块级元素"
+  },
+  {
+    "objectID": "notes/2023-10-06-html-layout/index.html#文本标签",
+    "href": "notes/2023-10-06-html-layout/index.html#文本标签",
+    "title": "HTML基础知识–HTML标签",
+    "section": "文本标签",
+    "text": "文本标签\n\n通常用于包裹：词汇短语等。\n通常写在排版标签里面。\n排版标签更宏观（大段的文字），文本标签更微观（词汇、短语等）。\n文本标签通常都是行内标签。\n\n\n\n\n标签名\n标签语义\n单/双标签\n\n\n\n\nem\n要着重阅读的内容\n双\n\n\nstrong\n十分重要的内容（语气比em要强）\n双\n\n\nspan\n没有语义，用于包裹短语的通用容器\n双\n\n\n\n\ndiv是大包装袋，span是小包装袋"
+  },
+  {
+    "objectID": "notes/2023-10-06-html-layout/index.html#不常用文本标签",
+    "href": "notes/2023-10-06-html-layout/index.html#不常用文本标签",
+    "title": "HTML基础知识–HTML标签",
+    "section": "不常用文本标签",
+    "text": "不常用文本标签\n\n\n\n\n\n\n\n\n标签名\n语义\n单/双标签\n\n\n\n\ncite\n作品标题（书籍、歌曲、电影、电视节目、绘画、雕塑）\n双\n\n\ndfn\n特殊术语，或专属名词\n双\n\n\ndel 与 ins\n删除的文本与插入的文本\n双\n\n\nsub 与 sup\n下标文本与上标文本\n双\n\n\ncode\n一段代码\n双\n\n\nsamp\n从正常的上下文中，将某些内容提取出来，例如：标识设备输出\n双\n\n\nkbd\n键盘文本，表示文本是通过键盘输入的，经常用在与计算机相关的手册中\n双\n\n\nabbr\n缩写，最好配合上title属性\n双\n\n\nbdo\n更改文本方向，要配合dir属性，可选值ltr(默认值)、rtl\n双\n\n\nvar\n标记变量，可以与code标签一起使用\n双\n\n\nsmall\n附属细则，例如：包括版权、法律文本。\n双\n\n\nb\n摘要中的关键字、评论中的产品名称。\n双\n\n\ni\n本意是：人物的思想活动、所说的话等。现在多用于：呈现字体图标\n双\n\n\nu\n与正常内容有反差的文本，例如：错的单词、不合适的描述等。\n双\n\n\nq\n短引用\n双\n\n\nblockquote\n长引用\n双\n\n\naddress\n地址信息\n双\n\n\n\n\n这些不常用的文本标签，编码时不用过于纠结（酌情而定，不用也没毛病）\nblockquote与address是块级元素，其他的文本标签，都是行内元素\n有些语义感不强的标签，我们很少使用，例如：small、b、u、q、blockquote\nHTML标签太多了！记住那些：重要的、语义感强的标签即可；截止目前，有这些\nh1-h6、p、div、em、strong、span"
+  },
+  {
+    "objectID": "notes/2023-10-06-html-layout/index.html#图片标签",
+    "href": "notes/2023-10-06-html-layout/index.html#图片标签",
+    "title": "HTML基础知识–HTML标签",
+    "section": "图片标签",
+    "text": "图片标签\n\n\n\n\n\n\n\n\n\n标签名\n标签语义\n常用属性\n单/双标签\n\n\n\n\nimg\n图片\nsrc: 图片路径alt: 图片描述width:图片宽度height: 图片高度\n单标签\n\n\n\n\n尽量不同时修改图片的宽和高，可能会造成比例失调\n暂且认为img是行内元素\nalt属性的作用：\n\n搜索引擎通过alt属性，得知图片的内容。 —最主要的作用\n当图片无法展示的时候，有些浏览器会呈现alt属性的值\n盲人阅读器会朗读alt属性值。"
+  },
+  {
+    "objectID": "notes/2023-10-05-why-css.html",
+    "href": "notes/2023-10-05-why-css.html",
+    "title": "为什么学习HTML和CSS",
+    "section": "",
+    "text": "自从前几年开始接触hugo静态网站生成工具，开始利用markdown进行博客写作，并制作了个人网站。后来又开始使用blogdown进行博客写作，再后来quarto逐渐成熟，于是转战到quarto进行科技写作，做网站、幻灯等等。其实不管是哪种工具，最终的展现形式无非是已HTML为框架，然后利用CSS来美化。这些工具自带的都有一些模板可供使用，但是如果想要自己做些个性化的改变的话就需要好好学一下HTML和CSS了。\n其实我一直有个想法就是把所有写作相关的文件都放到网上，从儿可以方便的使用。一个专门放幻灯片的网站，本站点专门用于存放学习记录，利用github作为图床专门存放图片，建立一个静态站点专门存放论文草稿和成文。"
+  }
+]

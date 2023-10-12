@@ -1,0 +1,54 @@
+project:
+  type: website
+  
+
+website:
+  title: "医生学习笔记"
+  site-url: "https://notes.chenq.site"
+  navbar:
+    background: "primary"
+    search: true
+    left:
+      - icon: 主页
+        href: index.qmd
+        text: Home
+      - icon: tropical-storm
+        href: https://chenq.site/qsight/
+        text: Qsight博客
+      - icon: pen
+        href: https://diary.chenq.site
+        text: 随笔录
+      - icon: hexagon
+        href: https://canregtools.chenq.site
+        text: Packages
+      - icon: journal-medical
+        href: /publications/
+        text: 出版作品
+      - icon: file-slides-fill
+        href: https://slides.chenq.site
+        text: Slides
+
+    right:
+      - icon: rss
+        href: /notes/index.xml
+        aria-label: RSS 
+
+  page-footer:
+    border: true
+    left: "Copyright@Qiong Chen"
+    center: "豫ICP备2021032022号"
+    right:
+      - icon: github
+        href: https://github.com/gigu003
+        aria-label: Qiong@GitHub
+      - icon: rss
+        href: /notes/index.xml
+        aria-label: RSS    
+
+format:
+  html:
+    theme: [flatly, styles.scss]
+    toc: true
+
+
+

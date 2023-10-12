@@ -1,0 +1,67 @@
+/*-- scss:defaults --*/
+
+/*-- scss:rules --*/
+body {
+  font-family:  Helvetica, Tahoma, Arial, "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 1.0em;
+  line-height: 1.8em;
+  background-color: #faf8f8;
+}
+
+form,
+input[type="search"],
+select[multiple="multiple"] {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Source Sans Pro', sans-serif;
+ /*  color: #36454f;*/ 
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 1.6em;
+  padding-bottom: 0em;
+  line-height: 1.6em;
+}
+
+h2 {
+  font-size: 1.3em;
+  border-bottom: 1px solid #b3cde0;
+}
+
+h2 a {
+  border-bottom: none;
+}
+
+h3 {
+  font-size: 1.1em;
+}
+
+h6 {
+  font-size: 0.8em;
+}
+
+a {
+  color: #487191;
+  text-decoration: none;
+}
+
+.description p{
+  padding: 10px;
+  border: 2px dashed  gray;
+  border-radius: 10px;
+  width: fit-content;
+  opacity: 0.9;
+  margin: 2px;
+}
+
+.list_title{
+  font-size: 1.6em;
+  align-content: center;
+}

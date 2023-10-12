@@ -1,0 +1,16 @@
+---
+lang: zh
+listing:
+  type: default
+  contents: "notes"
+  sort: "date desc"
+  categories: true
+  fields: [date, title, author, categories, description]
+  date-format: "YYYY-MM-DD"
+  page-size: 9
+page-layout: full
+---
+
+[记录学习，分享知识]{.list_title}
+
+----
