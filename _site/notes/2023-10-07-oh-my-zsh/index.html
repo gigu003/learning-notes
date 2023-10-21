@@ -190,6 +190,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#通配符查询" id="toc-通配符查询" class="nav-link" data-scroll-target="#通配符查询">通配符查询</a></li>
   <li><a href="#扩充文件名和路径" id="toc-扩充文件名和路径" class="nav-link" data-scroll-target="#扩充文件名和路径">扩充文件名和路径</a></li>
   <li><a href="#提取历史命令" id="toc-提取历史命令" class="nav-link" data-scroll-target="#提取历史命令">提取历史命令</a></li>
+  <li><a href="#更改文件夹名称" id="toc-更改文件夹名称" class="nav-link" data-scroll-target="#更改文件夹名称">更改文件夹名称</a></li>
+  <li><a href="#创建目录" id="toc-创建目录" class="nav-link" data-scroll-target="#创建目录">创建目录</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -376,7 +378,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="take命令" class="level3">
 <h3 class="anchored" data-anchor-id="take命令">take命令</h3>
-<p>一个三合一命令，穿件一个文件夹，并自动进入该文件夹</p>
+<p>一个三合一命令，创建一个文件夹，并自动进入该文件夹</p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -491,6 +493,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>!!，两个感叹号可以提取上次执行的命令</li>
 <li>!2，感叹号加数字可以提取前n次执行过的命令</li>
 </ul>
+</section>
+<section id="更改文件夹名称" class="level3">
+<h3 class="anchored" data-anchor-id="更改文件夹名称">更改文件夹名称</h3>
+<blockquote class="blockquote">
+<p>mv命令可以执行两个功能, 一是更改文件名称, 二是移动文件或文件夹的位置。</p>
+</blockquote>
+<p>可以通过下面的名称，更改文件或文件夹的名称。</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> oldname  newname</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>也可以更改文件或文件夹的位置</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> file_name  folder-location</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="创建目录" class="level3">
+<h3 class="anchored" data-anchor-id="创建目录">创建目录</h3>
+<blockquote class="blockquote">
+<p>mkdir 命令用于创建目录</p>
+</blockquote>
+<div class="sourceCode" id="cb13"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="pp">[</span><span class="op">-</span><span class="st">p</span><span class="pp">]</span> dirNmae</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>参数说明:</strong></p>
+<ul>
+<li>-p确保目录名称存在,不存在的就建一个。</li>
+</ul>
+<p><strong>实例</strong></p>
+<p>在工作目录下，建立一个名为website的子目录：</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> website</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>在工作目录下的notes目录中,建立一个名为t2的子目录。 若在当前目录下notes目录不存在，则建立一个notes目录。</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> notes/t2</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

@@ -3,7 +3,7 @@
 /*-- scss:rules --*/
 body {
   font-family:  Helvetica, Tahoma, Arial, "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
-  font-size: 1.0em;
+  font-size: 0.95em;
   line-height: 1.8em;
   background-color: #faf8f8;
 }
@@ -64,4 +64,8 @@ a {
 .list_title{
   font-size: 1.6em;
   align-content: center;
+}
+
+.listing-categories, .quarto-categories{
+  line-height: 1.0em;
 }
