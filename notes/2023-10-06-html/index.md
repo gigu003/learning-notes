@@ -10,7 +10,6 @@ tags:
   - 文档声明
   - 字符编码
 image: 'https://cdn.jsdelivr.net/gh/gigu003/db/images/html.png'
-draft: false
 ---
 ## HTML注释
 

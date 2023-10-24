@@ -1,9 +1,9 @@
 ---
-title: "quarto文档中使用mermaid实现思维导图"
+title: "Quarto文档中使用Mermaid实现思维导图"
 author: "陈琼"
 date: 2023-10-23
-categories: ["quarto"]
-tags: ["mermaid"]
+categories: ["Quarto"]
+tags: ["Mermaid"]
 execute: 
   echo: fenced
 ---
@@ -57,16 +57,8 @@ mindmap
 
 ## 添加图标
 
-```{mermaid}
-mindmap
-  讲话
-  ::icon(fa fa-microphone)
-      笔记本
-      ::icon(fa fa-book)
-```
-
-
 ## CSS类调整格式
+
 
 Mermaid在绘制思维导图的时候，可以通过三个冒号 \:\:\: 后面跟着以空格分割的多个CSS类名称。
 
@@ -78,29 +70,28 @@ Mermaid在绘制思维导图的时候，可以通过三个冒号 \:\:\: 后面�
   font-weight: bold;
 }
 
-. red{
+.red{
   text-color: darkred;
 }
 ```
+
 
 我们在上面的CSS文件里定义了两个CSS类,名称分别为 important 和 red , 那么我们就可以在下面的mermaid语句引用该类来自定义节点的显示效果。
 
 使用方法是：在适用的节点下面一行，与该节点缩进相同的单位，然后使用三个冒号跟着以空格分隔的CSS类名即可。
 
+## markdown文本
+
+Mermaid支持markdown文本的特征, 比如可以在文字前后使用\*\*表示加粗等，\*表示斜体。 
 ```{mermaid}
-mindmap
-    Root
-        A[自定义显示效果]
-        :::important red
-        B(B)
-        C
+  mindmap
+    [**文本**也可以跨行显示甚至第三行]
+    [*斜体显示文本*]
+    [正常文本显示]
 ```
 
 
 
-## 在线练习
-
-[mermaid提供了在线的渲染工具](https://mermaid.live/edit#pako:eNpVjk2Lg0AMhv9KyGkL9Q94WGh1t5fCFurN6SFo7AztfDBGpKj_fcd62c0pvM_zhkzY-JYxx-7px0ZTFKhK5SDNoS50NL1Y6m-QZZ_ziQWsd_ya4fhx8tBrH4Jx993mH1cJium8agyijXssGyre_R_HM5T1mYL4cPtLqtHP8FWbi07n_xMdObW-647yjrKGIhQU3wru0XK0ZNr0_rQmCkWzZYV5WlvuaHiKQuWWpNIg_vpyDeYSB97jEFoSLg3dI9ktXH4B_cJWqw), 我们可以直接在这里输入相应的语句, 然后网站会自动渲染出结果。
 
 
 
