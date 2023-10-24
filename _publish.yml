@@ -1,4 +1,4 @@
 - source: project
   netlify:
     - id: ed383b01-93c8-45bf-83de-b57796c7f914
-      url: 'https://learning-notes-111.netlify.app'
+      url: 'https://notes.chenq.site'

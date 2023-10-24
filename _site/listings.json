@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/notes/2023-10-25-quarto-flowchart.html",
       "/notes/2023-10-24-quarto-mermaid/index.html",
       "/notes/2023-10-07-oh-my-zsh/index.html",
       "/notes/2023-10-06-html/index.html",

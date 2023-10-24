@@ -32,7 +32,6 @@ website:
       - icon: rss
         href: /notes/index.xml
         aria-label: RSS 
-
   page-footer:
     border: true
     left: "Copyright@Qiong Chen"
@@ -44,7 +43,8 @@ website:
       - icon: rss
         href: /notes/index.xml
         aria-label: RSS    
-
+execute:
+  freeze: auto
 format:
   html:
     theme: [flatly, styles.scss]

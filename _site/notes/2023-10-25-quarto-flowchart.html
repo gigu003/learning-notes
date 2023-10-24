@@ -8,7 +8,7 @@
 
 <meta name="author" content="陈琼">
 
-<title>医生学习笔记 - Quarto文档中使用Mermaid实现思维导图</title>
+<title>医生学习笔记 - Quarto文档使用Mermaid绘制流程图</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -100,9 +66,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "搜索"
   }
 }</script>
-<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -173,26 +136,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">该页面内容</h2>
-   
-  <ul>
-  <li><a href="#基本语法" id="toc-基本语法" class="nav-link active" data-scroll-target="#基本语法">基本语法</a></li>
-  <li><a href="#控制节点图形" id="toc-控制节点图形" class="nav-link" data-scroll-target="#控制节点图形">控制节点图形</a></li>
-  <li><a href="#添加图标" id="toc-添加图标" class="nav-link" data-scroll-target="#添加图标">添加图标</a></li>
-  <li><a href="#css类调整格式" id="toc-css类调整格式" class="nav-link" data-scroll-target="#css类调整格式">CSS类调整格式</a></li>
-  <li><a href="#在线练习" id="toc-在线练习" class="nav-link" data-scroll-target="#在线练习">在线练习</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Quarto文档中使用Mermaid实现思维导图</h1>
+<h1 class="title">Quarto文档使用Mermaid绘制流程图</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Quarto</div>
+    <div class="quarto-category">Mermaid</div>
   </div>
   </div>
 
@@ -210,7 +164,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">发布日期</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2023年10月23日</p>
+      <p class="date">2023年10月25日</p>
     </div>
   </div>
   
@@ -222,155 +176,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<blockquote class="blockquote">
-<p>思维导图是我们组织想法的常用工具,能够实现这种功能的工具有很多,比如说XMind、Gitmind、MindMaster、MindNote等。而在Quarto里，我们可以使用Mermaid工具实现思维导图，从而输出到网页、word、PDF等。</p>
-</blockquote>
-<p>今天我把学习在Quarto中使用Meimaid绘制思维导图的过程记录如下。如果在此之前你还没有了解过Quarto的话，请查看这篇文章，<a href="http://chenq.site/qsight/2023-3-25-quarto-writing/">论文写作效率神器:Quarto出版系统</a>，先了解一下Quarto。</p>
-<p>首先，浏览一下Mermaid的<a href="https://mermaid.js.org/intro/">官方网站</a>，mermaid除了可以绘制思维导图之外还可以绘制流程图、饼图、关系图等，是一个很方便的工具。</p>
-<p>之后，在quarto文档中插入mermaid的代码块，即可开始思维导图的绘制。</p>
-<section id="基本语法" class="level2">
-<h2 class="anchored" data-anchor-id="基本语法">基本语法</h2>
-<p>在mermaid中，思维导图以mindmap关键字开头，然后另起一行缩进空格写思维导图的根节点，然后另起一行，在根节点的基础上再缩进空格写第二级节点，相同级别的节点需要缩进相同的空格数。再往下添加节点的话，依据同样的准则即可。</p>
-<p>具体写法和实现效果可以参考下面的代码。</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="in">mindmap</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in">  质量控制</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="in">    可比性</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="in">      发病时间定义</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="in">      疾病编码</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="in">    完整性</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="in">      M:I</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="in">      发病率</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="in">      死亡率</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="in">      年龄别率</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="in">    有效性</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="in">      MV\%</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="in">    时效性</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<div>
-<pre class="mermaid mermaid-js">mindmap
-  质量控制
-    可比性
-      发病时间定义
-      疾病编码
-    完整性
-      M:I
-      发病率
-      死亡率
-      年龄别率
-    有效性
-      MV\%
-    时效性
-</pre>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="控制节点图形" class="level2">
-<h2 class="anchored" data-anchor-id="控制节点图形">控制节点图形</h2>
-<p>mermaid目前的语法可以让我们通过不同的<strong><em>括号语句</em></strong>控制节点的图形，比如通过方括号对[长方形]显示长方形,通过(圆角长方形)显示圆角长方形，具体可参考下面的代码。</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="in">mindmap</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="in">  形状</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="in">    默认形状</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="in">    [长方形]</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="in">    (圆角长方形)</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="in">    ((圆形))</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="in">    ))爆炸形状((</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="in">    )云朵形状(</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="in">    {{六角形}}</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<div>
-<pre class="mermaid mermaid-js">mindmap
-  形状
-    默认形状
-    [长方形]
-    (圆角长方形)
-    ((圆形))
-    ))爆炸形状((
-    )云朵形状(
-    {{六角形}}
-</pre>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="添加图标" class="level2">
-<h2 class="anchored" data-anchor-id="添加图标">添加图标</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="in">mindmap</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="in">  讲话</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="in">  ::icon(fa fa-microphone)</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="in">      笔记本</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="in">      ::icon(fa fa-book)</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<div>
-<pre class="mermaid mermaid-js">mindmap
-  讲话
-  ::icon(fa fa-microphone)
-      笔记本
-      ::icon(fa fa-book)
-</pre>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="css类调整格式" class="level2">
-<h2 class="anchored" data-anchor-id="css类调整格式">CSS类调整格式</h2>
-<p>Mermaid在绘制思维导图的时候，可以通过三个冒号 ::: 后面跟着以空格分割的多个CSS类名称。</p>
-<p>比如,我们在CSS文件里定义了一个CSS类</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.important</span>{</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-size</span>: <span class="dv">3</span><span class="dt">em</span><span class="op">;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-weight</span>: <span class="dv">bold</span><span class="op">;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">.</span> red{</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  text-color: <span class="cn">darkred</span><span class="op">;</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>我们在上面的CSS文件里定义了两个CSS类,名称分别为 important 和 red , 那么我们就可以在下面的mermaid语句引用该类来自定义节点的显示效果。</p>
-<p>使用方法是：在适用的节点下面一行，与该节点缩进相同的单位，然后使用三个冒号跟着以空格分隔的CSS类名即可。</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="in">mindmap</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="in">    Root</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="in">        A[自定义显示效果]</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="in">        :::important red</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="in">        B(B)</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="in">        C</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<div>
-<pre class="mermaid mermaid-js">mindmap
-    Root
-        A[自定义显示效果]
-        :::important red
-        B(B)
-        C
-</pre>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="在线练习" class="level2">
-<h2 class="anchored" data-anchor-id="在线练习">在线练习</h2>
-<p><a href="https://mermaid.live/edit#pako:eNpVjk2Lg0AMhv9KyGkL9Q94WGh1t5fCFurN6SFo7AztfDBGpKj_fcd62c0pvM_zhkzY-JYxx-7px0ZTFKhK5SDNoS50NL1Y6m-QZZ_ziQWsd_ya4fhx8tBrH4Jx993mH1cJium8agyijXssGyre_R_HM5T1mYL4cPtLqtHP8FWbi07n_xMdObW-647yjrKGIhQU3wru0XK0ZNr0_rQmCkWzZYV5WlvuaHiKQuWWpNIg_vpyDeYSB97jEFoSLg3dI9ktXH4B_cJWqw">mermaid提供了在线的渲染工具</a>, 我们可以直接在这里输入相应的语句, 然后网站会自动渲染出结果。</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
