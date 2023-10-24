@@ -60,7 +60,7 @@
     "href": "index.html",
     "title": "医生学习笔记",
     "section": "",
-    "text": "记录学习，分享知识\n\n\n\n\n\n\n\n\n\n\n\n学习安装配置和使用Oh My Zsh\n\n\n\n\n\n\n\nOh-My-Zsh\n\n\n\n\n\n\n\n\n\n\n\n2023-10-07\n\n\n陈琼\n\n\n\n\n\n\n\n\nHTML基础知识\n\n\n\n\n\n\n\nHTML+CSS笔记\n\n\n\n\n\n\n\n\n\n\n\n2023-10-06\n\n\n陈琼\n\n\n\n\n\n\n\n\nHTML基础知识–HTML标签\n\n\n\n\n\n\n\nHTML+CSS笔记\n\n\n\n\n\n\n\n\n\n\n\n2023-10-06\n\n\n\n\n\n\n\n\nHTML+CSS基础知识\n\n\n\n\n\n\n\nHTML+CSS笔记\n\n\n\n\n\n\n\n\n\n\n\n2023-10-05\n\n\n陈琼\n\n\n\n\n\n\n\n\n为什么学习HTML和CSS\n\n\n\n\n\n\n\nHTML+CSS笔记\n\n\n\n\n\n\n\n\n\n\n\n2023-10-05\n\n\n陈琼\n\n\n\n\n\n\n无匹配项"
+    "text": "记录学习，分享知识\n\n\n\n\n\n\n\n\n\n\n\nquarto文档中使用mermaid实现思维导图\n\n\n\n\n\n\n\nquarto\n\n\n\n\n\n\n\n\n\n\n\n2023-10-23\n\n\n陈琼\n\n\n\n\n\n\n\n\n学习安装配置和使用Oh My Zsh\n\n\n\n\n\n\n\nOh-My-Zsh\n\n\n\n\n\n\n\n\n\n\n\n2023-10-07\n\n\n陈琼\n\n\n\n\n\n\n\n\nHTML基础知识\n\n\n\n\n\n\n\nHTML+CSS笔记\n\n\n\n\n\n\n\n\n\n\n\n2023-10-06\n\n\n陈琼\n\n\n\n\n\n\n\n\nHTML基础知识–HTML标签\n\n\n\n\n\n\n\nHTML+CSS笔记\n\n\n\n\n\n\n\n\n\n\n\n2023-10-06\n\n\n\n\n\n\n\n\nHTML+CSS基础知识\n\n\n\n\n\n\n\nHTML+CSS笔记\n\n\n\n\n\n\n\n\n\n\n\n2023-10-05\n\n\n陈琼\n\n\n\n\n\n\n\n\n为什么学习HTML和CSS\n\n\n\n\n\n\n\nHTML+CSS笔记\n\n\n\n\n\n\n\n\n\n\n\n2023-10-05\n\n\n陈琼\n\n\n\n\n\n\n无匹配项"
   },
   {
     "objectID": "notes/2023-10-07-oh-my-zsh/index.html",
@@ -201,5 +201,47 @@
     "title": "为什么学习HTML和CSS",
     "section": "",
     "text": "自从前几年开始接触hugo静态网站生成工具，开始利用markdown进行博客写作，并制作了个人网站。后来又开始使用blogdown进行博客写作，再后来quarto逐渐成熟，于是转战到quarto进行科技写作，做网站、幻灯等等。其实不管是哪种工具，最终的展现形式无非是已HTML为框架，然后利用CSS来美化。这些工具自带的都有一些模板可供使用，但是如果想要自己做些个性化的改变的话就需要好好学一下HTML和CSS了。\n其实我一直有个想法就是把所有写作相关的文件都放到网上，从儿可以方便的使用。一个专门放幻灯片的网站，本站点专门用于存放学习记录，利用github作为图床专门存放图片，建立一个静态站点专门存放论文草稿和成文。"
+  },
+  {
+    "objectID": "notes/2023-10-24-quarto-mermaid.html",
+    "href": "notes/2023-10-24-quarto-mermaid.html",
+    "title": "quarto文档中使用mermaid实现思维导图",
+    "section": "",
+    "text": "思维导图是我们组织想法的常用工具,能够实现这种功能的工具有很多,比如说XMind、Gitmind、MindMaster、MindNote等。而在Quarto里，我们可以使用Mermaid工具实现思维导图，从而输出到网页、word、PDF等。\n今天我把学习在Quarto中使用Meimaid绘制思维导图的过程记录如下。如果在此之前你还没有了解过Quarto的话，请查看这篇文章，论文写作效率神器:Quarto出版系统，先了解一下Quarto。\n首先，浏览一下Mermaid的官方网站，mermaid除了可以绘制思维导图之外还可以绘制流程图、饼图、关系图等，是一个很方便的工具。\n之后，在quarto文档中插入mermaid的代码块，即可开始思维导图的绘制。"
+  },
+  {
+    "objectID": "notes/2023-10-24-quarto-mermaid.html#基本语法",
+    "href": "notes/2023-10-24-quarto-mermaid.html#基本语法",
+    "title": "quarto文档中使用mermaid实现思维导图",
+    "section": "基本语法",
+    "text": "基本语法\n在mermaid中，思维导图以mindmap关键字开头，然后另起一行缩进空格写思维导图的根节点，然后另起一行，在根节点的基础上再缩进空格写第二级节点，相同级别的节点需要缩进相同的空格数。再往下添加节点的话，依据同样的准则即可。\n具体写法和实现效果可以参考下面的代码。\n\n```{mermaid}\nmindmap\n  质量控制\n    可比性\n      发病时间定义\n      疾病编码\n    完整性\n      M:I\n      发病率\n      死亡率\n      年龄别率\n    有效性\n      MV\\%\n    时效性\n```\n\n\n\nmindmap\n  质量控制\n    可比性\n      发病时间定义\n      疾病编码\n    完整性\n      M:I\n      发病率\n      死亡率\n      年龄别率\n    有效性\n      MV\\%\n    时效性"
+  },
+  {
+    "objectID": "notes/2023-10-24-quarto-mermaid.html#控制节点图形",
+    "href": "notes/2023-10-24-quarto-mermaid.html#控制节点图形",
+    "title": "quarto文档中使用mermaid实现思维导图",
+    "section": "控制节点图形",
+    "text": "控制节点图形\nmermaid目前的语法可以让我们通过不同的括号语句控制节点的图形，比如通过方括号对[长方形]显示长方形,通过(圆角长方形)显示圆角长方形，具体可参考下面的代码。\n\n```{mermaid}\nmindmap\n  形状\n    默认形状\n    [长方形]\n    (圆角长方形)\n    ((圆形))\n    ))爆炸形状((\n    )云朵形状(\n    {{六角形}}\n```\n\n\n\nmindmap\n  形状\n    默认形状\n    [长方形]\n    (圆角长方形)\n    ((圆形))\n    ))爆炸形状((\n    )云朵形状(\n    {{六角形}}"
+  },
+  {
+    "objectID": "notes/2023-10-24-quarto-mermaid.html#添加图标",
+    "href": "notes/2023-10-24-quarto-mermaid.html#添加图标",
+    "title": "quarto文档中使用mermaid实现思维导图",
+    "section": "添加图标",
+    "text": "添加图标\n\n```{mermaid}\nmindmap\n  讲话\n  ::icon(fa fa-microphone)\n      笔记本\n      ::icon(fa fa-book)\n```\n\n\n\nmindmap\n  讲话\n  ::icon(fa fa-microphone)\n      笔记本\n      ::icon(fa fa-book)"
+  },
+  {
+    "objectID": "notes/2023-10-24-quarto-mermaid.html#在线练习",
+    "href": "notes/2023-10-24-quarto-mermaid.html#在线练习",
+    "title": "quarto文档中使用mermaid实现思维导图",
+    "section": "在线练习",
+    "text": "在线练习\nmermaid提供了在线的渲染工具, 我们可以直接在这里输入相应的语句, 然后网站会自动渲染出结果。"
+  },
+  {
+    "objectID": "notes/2023-10-24-quarto-mermaid.html#css类调整格式",
+    "href": "notes/2023-10-24-quarto-mermaid.html#css类调整格式",
+    "title": "quarto文档中使用mermaid实现思维导图",
+    "section": "CSS类调整格式",
+    "text": "CSS类调整格式\nMermaid在绘制思维导图的时候，可以通过三个冒号 ::: 后面跟着以空格分割的多个CSS类名称。\n比如,我们在CSS文件里定义了一个CSS类\n.important{\n  font-size: 3em;\n  font-weight: bold;\n}\n\n. red{\n  text-color: darkred;\n}\n我们在上面的CSS文件里定义了两个CSS类,名称分别为 important 和 red , 那么我们就可以在下面的mermaid语句引用该类来自定义节点的显示效果。\n使用方法是：在适用的节点下面一行，与该节点缩进相同的单位，然后使用三个冒号跟着以空格分隔的CSS类名即可。\n\n```{mermaid}\nmindmap\n    Root\n        A[自定义显示效果]\n        :::important red\n        B(B)\n        C\n```\n\n\n\nmindmap\n    Root\n        A[自定义显示效果]\n        :::important red\n        B(B)\n        C"
   }
 ]
