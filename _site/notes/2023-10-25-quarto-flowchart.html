@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -66,6 +100,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "搜索"
   }
 }</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -136,7 +173,21 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">该页面内容</h2>
+   
+  <ul>
+  <li><a href="#基本语法" id="toc-基本语法" class="nav-link active" data-scroll-target="#基本语法">基本语法</a></li>
+  <li><a href="#流程图方向" id="toc-流程图方向" class="nav-link" data-scroll-target="#流程图方向">流程图方向</a></li>
+  <li><a href="#节点形状" id="toc-节点形状" class="nav-link" data-scroll-target="#节点形状">节点形状</a></li>
+  <li><a href="#箭头或连接线段" id="toc-箭头或连接线段" class="nav-link" data-scroll-target="#箭头或连接线段">箭头或连接线段</a></li>
+  <li><a href="#箭头或连接线段的长短" id="toc-箭头或连接线段的长短" class="nav-link" data-scroll-target="#箭头或连接线段的长短">箭头或连接线段的长短</a></li>
+  <li><a href="#子流程图" id="toc-子流程图" class="nav-link" data-scroll-target="#子流程图">子流程图</a></li>
+  <li><a href="#子流程图的方向" id="toc-子流程图的方向" class="nav-link" data-scroll-target="#子流程图的方向">子流程图的方向</a></li>
+  <li><a href="#交互" id="toc-交互" class="nav-link" data-scroll-target="#交互">交互</a></li>
+  <li><a href="#注释" id="toc-注释" class="nav-link" data-scroll-target="#注释">注释</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -176,8 +227,474 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Quarto文档中支持使用Mermaid绘制流程图，为了绘制流程图，我们可以在Quarto文档中插入Mermaid代码块。</p>
+<div class="cell" data-fig-width="6">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="in">%%| label: fig-mermaid</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in">%%| fig-width: 6</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="in">%%| fig-cap: |</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="in">%%|   How Quarto orchestrates rendering of documents: start with </span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="in">%%|   a qmd file, use the Knitr or Jupyter engine to perform the </span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="in">%%|   computations and convert it to an md file, then use Pandoc </span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="in">%%|   to convert to various file formats including HTML, PDF, </span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="in">%%|   and Word.</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="in">flowchart LR</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="in">  A[qmd] --&gt; B(Knitr)</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="in">  A[qmd] --&gt; C(Jupyter)</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="in">  B(Knitr) --&gt; D[md]</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="in">  C(Jupyter) --&gt; D[md]</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="in">  D[md] --&gt; E(pandoc)</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="in">  E(pandoc) --&gt; F(HTML)</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="in">  E(pandoc) --&gt; G(PDF)</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="in">  E(pandoc) --&gt; H(Word)</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="in">  E(pandoc) --&gt; I{and more}</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-mermaid" class="quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-mermaid">flowchart LR
+  A[qmd] --&gt; B(Knitr)
+  A[qmd] --&gt; C(Jupyter)
+  B(Knitr) --&gt; D[md]
+  C(Jupyter) --&gt; D[md]
+  D[md] --&gt; E(pandoc)
+  E(pandoc) --&gt; F(HTML)
+  E(pandoc) --&gt; G(PDF)
+  E(pandoc) --&gt; H(Word)
+  E(pandoc) --&gt; I{and more}
+</pre>
+</div>
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-mermaid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+图&nbsp;1: How Quarto orchestrates rendering of documents: start with a qmd file, use the Knitr or Jupyter engine to perform the computations and convert it to an md file, then use Pandoc to convert to various file formats including HTML, PDF, and Word.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="基本语法" class="level2">
+<h2 class="anchored" data-anchor-id="基本语法">基本语法</h2>
+<blockquote class="blockquote">
+<p>流程图是由不同的节点和箭头(或线段)组成的图示, 以节点表示不同的步骤, 以箭头表示方向, 从而描述事件或工作的流程。</p>
+</blockquote>
+<p>Mermaid代码定义了节点和箭头是如何创建的，并支持不同类型的箭头、多方向箭头，以及与子图之间的连接。</p>
+<p>Mermaid流程图语法以关键字flowchart开头，紧跟着空格和表示流程图方向的关键字，比如LR（左到右）、RL（右到左）、TD（上到下）、BT（下到上），然后另起一行，缩进空格之后添加节点即可。</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="in">flowchart LR</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="in">  A</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p>上面的mermaid代码块只是插入了一个节点，没有表示方向的箭头，也没有另外一个节点。</p>
+<p>mermaid里面用 --&gt; 表示方向, 可以指向另外一个节点。</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="in">flowchart LR</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="in">  A --&gt; B</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A --&gt; B
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p>当节点比较多，或者指向比较复杂的时候，我们可以给节点定义ID，只需要在该节点第一次出现的时候定义，后面可以直接利用ID表示指向。</p>
+<p>比如： 有个三个节点，A、B、C，A同时指向B和C，那么我们可以给每个节点分配一个id，第二次指示方向的时候，只需使用ID号即可。</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="in">flowchart LR</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="in">  id1(A) --&gt; id2(B)</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="in">  id1 --&gt; id3(C)</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  id1(A) --&gt; id2(B)
+  id1 --&gt; id3(C)
+</pre>
+</div>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>我么可以id号紧跟着各种括号方式定义id，括号内文本代表id的实际内容。</p>
+</blockquote>
+</section>
+<section id="流程图方向" class="level2">
+<h2 class="anchored" data-anchor-id="流程图方向">流程图方向</h2>
+<p>flowchart 空格 方向关键词</p>
+<p>方向关键词的选项可以有以下几种：</p>
+<ul>
+<li>LR 从左至右</li>
+<li>RL 从右至左</li>
+<li>TD 从上到下</li>
+<li>BT 从下到上</li>
+</ul>
+</section>
+<section id="节点形状" class="level2">
+<h2 class="anchored" data-anchor-id="节点形状">节点形状</h2>
+<p>Mermaid以不同类型的括号组合来表示节点的形状，比如以普通的圆括号对表示圆角长方形等。</p>
+<p>下面我们列出mermaid支持的各种节点形状所对应的括号组合。</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="in">flowchart LR</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="in">  id1(id1:圆角长方形)</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="in">  id2([id2:椭圆形])</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="in">  id3[[id3:卷轴形状]]</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="in">  id4[(id4:数据库形状)]</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="in">  id1 --&gt; id2 --&gt; id3 --&gt; id4</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="in">  id5((id5:圆形))</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="in">  id6&gt;id6:标签形状]</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="in">  id7{id7:菱形}</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="in">  id8{{id8:六角形}}</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="in">  id5 --&gt; id6 --&gt; id7 --&gt; id8</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="in">  id9[/id9:平行四边形/]</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="in">  id10[\id10:平行四边形\]</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="in">  id11[/id11:梯形\]</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="in">  id12[\id12:倒梯形/]</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="in">  id13(((id13:双环圆形)))</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="in">  id9 --&gt; id10 --&gt; id11 --&gt; id12 --&gt; id13</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  id1(id1:圆角长方形)
+  id2([id2:椭圆形])
+
+  id3[[id3:卷轴形状]]
+  id4[(id4:数据库形状)]
+  id1 --&gt; id2 --&gt; id3 --&gt; id4
+  id5((id5:圆形))
+  id6&gt;id6:标签形状]
+  id7{id7:菱形}
+  id8{{id8:六角形}}
+  id5 --&gt; id6 --&gt; id7 --&gt; id8
+  id9[/id9:平行四边形/]
+  id10[\id10:平行四边形\]
+  id11[/id11:梯形\]
+  id12[\id12:倒梯形/]
+  id13(((id13:双环圆形)))
+  id9 --&gt; id10 --&gt; id11 --&gt; id12 --&gt; id13
+</pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="箭头或连接线段" class="level2">
+<h2 class="anchored" data-anchor-id="箭头或连接线段">箭头或连接线段</h2>
+<p>节点之间可以通过箭头或者线段连接起来，mermaid支持指定不同类型的箭头或者线段，或者箭头中间穿插文本。</p>
+<p>写法： 带箭头，节点A --&gt; 节点B， 或者不带箭头（线段连接） 节点A — 节点B</p>
+<p>也可以在连接线段中间添加文字</p>
+<p>写法： 带箭头：节点A --&gt;|线段文本|节点B， 不带箭头：节点A --|线段文本|--节点B</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="in">flowchart LR</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="in">  A --&gt; B</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="in">  C --- D</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="in">  G --&gt;|线段文本|H</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="in">  G1 --线段文本--&gt;H1</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="in">  E ---|线段文本|F</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="in">  J1 -.-&gt; J2</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="in">  J3 -.虚线文本.-&gt;J4</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="in">  K1 ==&gt; K2</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="in">  k3 ==加粗文本==&gt;K4</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="in">  L1 ~~~ L2</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="in">  A1--text--&gt;B1--text2--&gt;C1</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A --&gt; B
+  C --- D
+  G --&gt;|线段文本|H
+  G1 --线段文本--&gt;H1
+  E ---|线段文本|F
+  J1 -.-&gt; J2
+  J3 -.虚线文本.-&gt;J4
+  K1 ==&gt; K2
+  k3 ==加粗文本==&gt;K4
+  L1 ~~~ L2
+  A1--text--&gt;B1--text2--&gt;C1
+</pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="箭头或连接线段的长短" class="level2">
+<h2 class="anchored" data-anchor-id="箭头或连接线段的长短">箭头或连接线段的长短</h2>
+<p>流程图中的每个节点最终都会被分配到呈现图中的一个等级，即一个垂直或水平级别（取决于流程图的方向），这是根据其连接的节点来确定的。默认情况下，连接可以跨越任意数量的等级，但您可以通过在链接定义中添加额外的破折号来要求某个连接比其他链接更长。</p>
+<p>在下面的示例中，从节点B到节点E的链接中添加了两个额外的破折号，以使其跨越比常规链接多两个等级：</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="in">flowchart TD</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="in">    A[Start] --&gt; B{Is it?}</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="in">    B --&gt;|Yes| C[OK]</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="in">    C --&gt; D[Rethink]</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="in">    D --&gt; B</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="in">    B ----&gt;|No| E[End]</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    A[Start] --&gt; B{Is it?}
+    B --&gt;|Yes| C[OK]
+    C --&gt; D[Rethink]
+    D --&gt; B
+    B ----&gt;|No| E[End]
+</pre>
+</div>
+</div>
+</div>
+</div>
+<table class="table">
+<thead>
+<tr class="header">
+<th>长度</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>正常</td>
+<td>---</td>
+<td>----</td>
+<td>-----</td>
+</tr>
+<tr class="even">
+<td>正常带箭头</td>
+<td>--&gt;</td>
+<td>---&gt;</td>
+<td>----&gt;</td>
+</tr>
+<tr class="odd">
+<td>加粗</td>
+<td>===</td>
+<td>===</td>
+<td>====</td>
+</tr>
+<tr class="even">
+<td>加粗带箭头</td>
+<td>==&gt;</td>
+<td>===&gt;</td>
+<td>====&gt;</td>
+</tr>
+<tr class="odd">
+<td>虚线</td>
+<td>-.-</td>
+<td>-..-</td>
+<td>-…-</td>
+</tr>
+<tr class="even">
+<td>虚线带箭头</td>
+<td>-.-&gt;</td>
+<td>-..-&gt;</td>
+<td>-…-&gt;</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="子流程图" class="level2">
+<h2 class="anchored" data-anchor-id="子流程图">子流程图</h2>
+<p>Mermaid在绘制流程图时允许我们添一个或多个子流程图。具体方式如下：</p>
+<pre><code>subgraph title
+  graph definition
+end</code></pre>
+<p>下面是一个包含三个子图的流程图</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="in">flowchart TB</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="in">    c1--&gt;b1</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="in">    subgraph one</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="in">    a1--&gt;a2</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="in">    end</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="in">    subgraph two</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="in">    b1--&gt;b2</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="in">    end</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="in">    subgraph three</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="in">    c1--&gt;c2</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="in">    end</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+    c1--&gt;b1
+    subgraph one
+    a1--&gt;a2
+    end
+    subgraph two
+    b1--&gt;b2
+    end
+    subgraph three
+    c1--&gt;c2
+    end
+</pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="子流程图的方向" class="level2">
+<h2 class="anchored" data-anchor-id="子流程图的方向">子流程图的方向</h2>
+<p>使用流程图类型的图形，您可以使用direction语句来设置子图呈现的方向，就像在这个示例中一样。</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="in">flowchart LR</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="in">  subgraph TOP</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="in">    direction TB</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="in">    subgraph B1</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="in">        direction RL</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="in">        i1 --&gt;f1</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="in">    end</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="in">    subgraph B2</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="in">        direction BT</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="in">        i2 --&gt;f2</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="in">    end</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="in">  end</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="in">  A --&gt; TOP --&gt; B</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="in">  B1 --&gt; B2</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  subgraph TOP
+    direction TB
+    subgraph B1
+        direction RL
+        i1 --&gt;f1
+    end
+    subgraph B2
+        direction BT
+        i2 --&gt;f2
+    end
+  end
+  A --&gt; TOP --&gt; B
+  B1 --&gt; B2
+</pre>
+</div>
+</div>
+</div>
+</div>
+<p>限制性：如果子图的任何节点与外部相连，子图的方向将被忽略。相反，子图将继承父图的方向：</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="in">flowchart LR</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="in">    subgraph subgraph1</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="in">        direction TB</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="in">        top1[top] --&gt; bottom1[bottom]</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="in">    end</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="in">    subgraph subgraph2</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="in">        direction TB</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="in">        top2[top] --&gt; bottom2[bottom]</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="in">    end</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="in">    %% ^ These subgraphs are identical, except for the links to them:</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="in">    %% Link *to* subgraph1: subgraph1 direction is mantained</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="in">    outside --&gt; subgraph1</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="in">    %% Link *within* subgraph2:</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="in">    %% subgraph2 inherits the direction of the top-level graph (LR)</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="in">    outside ---&gt; top2</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    subgraph subgraph1
+        direction TB
+        top1[top] --&gt; bottom1[bottom]
+    end
+    subgraph subgraph2
+        direction TB
+        top2[top] --&gt; bottom2[bottom]
+    end
+    %% ^ These subgraphs are identical, except for the links to them:
+
+    %% Link *to* subgraph1: subgraph1 direction is mantained
+    outside --&gt; subgraph1
+    %% Link *within* subgraph2:
+    %% subgraph2 inherits the direction of the top-level graph (LR)
+    outside ---&gt; top2
+</pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="交互" class="level2">
+<h2 class="anchored" data-anchor-id="交互">交互</h2>
+<p>Mermaid允许我们添加一个点击事件到一个节点上，通过点击可以触发JavaScript或者导航到一个外部链接，并在新的浏览器标签中查看结果。</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="in">flowchart LR</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="in">    A--&gt;B</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="in">    B--&gt;C</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="in">    C--&gt;D</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="in">    click B "https://www.github.com" "This is a tooltip for a link"</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="in">    click D href "https://www.github.com" "This is a tooltip for a link"</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A--&gt;B
+    B--&gt;C
+    C--&gt;D
+    click B "https://www.github.com" "This is a tooltip for a link"
+    click D href "https://www.github.com" "This is a tooltip for a link"
+</pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="注释" class="level2">
+<h2 class="anchored" data-anchor-id="注释">注释</h2>
+<p>在流程图中可以输入注释，这些注释将被解析器忽略。注释需要单独位于一行，并且必须以 %%（双百分号）开头。从注释开始到下一个换行符之间的任何文本都将被视为注释，包括任何流程语法。</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="in">flowchart LR</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="in">%% 这里都是注释</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="in">   A -- text --&gt; B -- text2 --&gt; C</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+%% 这里都是注释
+   A -- text --&gt; B -- text2 --&gt; C
+</pre>
+</div>
+</div>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

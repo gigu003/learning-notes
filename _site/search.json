@@ -243,5 +243,82 @@
     "title": "为什么学习HTML和CSS",
     "section": "",
     "text": "自从前几年开始接触hugo静态网站生成工具，开始利用markdown进行博客写作，并制作了个人网站。后来又开始使用blogdown进行博客写作，再后来quarto逐渐成熟，于是转战到quarto进行科技写作，做网站、幻灯等等。其实不管是哪种工具，最终的展现形式无非是已HTML为框架，然后利用CSS来美化。这些工具自带的都有一些模板可供使用，但是如果想要自己做些个性化的改变的话就需要好好学一下HTML和CSS了。\n其实我一直有个想法就是把所有写作相关的文件都放到网上，从儿可以方便的使用。一个专门放幻灯片的网站，本站点专门用于存放学习记录，利用github作为图床专门存放图片，建立一个静态站点专门存放论文草稿和成文。"
+  },
+  {
+    "objectID": "notes/2023-10-25-quarto-flowchart.html",
+    "href": "notes/2023-10-25-quarto-flowchart.html",
+    "title": "Quarto文档使用Mermaid绘制流程图",
+    "section": "",
+    "text": "Quarto文档中支持使用Mermaid绘制流程图，为了绘制流程图，我们可以在Quarto文档中插入Mermaid代码块。\n```{mermaid}\n%%| label: fig-mermaid\n%%| fig-width: 6\n%%| fig-cap: |\n%%|   How Quarto orchestrates rendering of documents: start with \n%%|   a qmd file, use the Knitr or Jupyter engine to perform the \n%%|   computations and convert it to an md file, then use Pandoc \n%%|   to convert to various file formats including HTML, PDF, \n%%|   and Word.\nflowchart LR\n  A[qmd] --&gt; B(Knitr)\n  A[qmd] --&gt; C(Jupyter)\n  B(Knitr) --&gt; D[md]\n  C(Jupyter) --&gt; D[md]\n  D[md] --&gt; E(pandoc)\n  E(pandoc) --&gt; F(HTML)\n  E(pandoc) --&gt; G(PDF)\n  E(pandoc) --&gt; H(Word)\n  E(pandoc) --&gt; I{and more}\n```\n\n\n\n\n\nflowchart LR\n  A[qmd] --&gt; B(Knitr)\n  A[qmd] --&gt; C(Jupyter)\n  B(Knitr) --&gt; D[md]\n  C(Jupyter) --&gt; D[md]\n  D[md] --&gt; E(pandoc)\n  E(pandoc) --&gt; F(HTML)\n  E(pandoc) --&gt; G(PDF)\n  E(pandoc) --&gt; H(Word)\n  E(pandoc) --&gt; I{and more}\n\n\n\n\n图 1: How Quarto orchestrates rendering of documents: start with a qmd file, use the Knitr or Jupyter engine to perform the computations and convert it to an md file, then use Pandoc to convert to various file formats including HTML, PDF, and Word."
+  },
+  {
+    "objectID": "notes/2023-10-25-quarto-flowchart.html#基本语法",
+    "href": "notes/2023-10-25-quarto-flowchart.html#基本语法",
+    "title": "Quarto文档使用Mermaid绘制流程图",
+    "section": "基本语法",
+    "text": "基本语法\n\n流程图是由不同的节点和箭头(或线段)组成的图示, 以节点表示不同的步骤, 以箭头表示方向, 从而描述事件或工作的流程。\n\nMermaid代码定义了节点和箭头是如何创建的，并支持不同类型的箭头、多方向箭头，以及与子图之间的连接。\nMermaid流程图语法以关键字flowchart开头，紧跟着空格和表示流程图方向的关键字，比如LR（左到右）、RL（右到左）、TD（上到下）、BT（下到上），然后另起一行，缩进空格之后添加节点即可。\n\n```{mermaid}\nflowchart LR\n  A\n```\n\n\n\nflowchart LR\n  A\n\n\n\n\n\n上面的mermaid代码块只是插入了一个节点，没有表示方向的箭头，也没有另外一个节点。\nmermaid里面用 --&gt; 表示方向, 可以指向另外一个节点。\n\n```{mermaid}\nflowchart LR\n  A --&gt; B\n```\n\n\n\nflowchart LR\n  A --&gt; B\n\n\n\n\n\n当节点比较多，或者指向比较复杂的时候，我们可以给节点定义ID，只需要在该节点第一次出现的时候定义，后面可以直接利用ID表示指向。\n比如： 有个三个节点，A、B、C，A同时指向B和C，那么我们可以给每个节点分配一个id，第二次指示方向的时候，只需使用ID号即可。\n\n```{mermaid}\nflowchart LR\n  id1(A) --&gt; id2(B)\n  id1 --&gt; id3(C)\n```\n\n\n\nflowchart LR\n  id1(A) --&gt; id2(B)\n  id1 --&gt; id3(C)\n\n\n\n\n\n\n我么可以id号紧跟着各种括号方式定义id，括号内文本代表id的实际内容。"
+  },
+  {
+    "objectID": "notes/2023-10-25-quarto-flowchart.html#节点形状",
+    "href": "notes/2023-10-25-quarto-flowchart.html#节点形状",
+    "title": "Quarto文档使用Mermaid绘制流程图",
+    "section": "节点形状",
+    "text": "节点形状\nMermaid以不同类型的括号组合来表示节点的形状，比如以普通的圆括号对表示圆角长方形等。\n下面我们列出mermaid支持的各种节点形状所对应的括号组合。\n\n```{mermaid}\nflowchart LR\n  id1(id1:圆角长方形)\n  id2([id2:椭圆形])\n\n  id3[[id3:卷轴形状]]\n  id4[(id4:数据库形状)]\n  id1 --&gt; id2 --&gt; id3 --&gt; id4\n  id5((id5:圆形))\n  id6&gt;id6:标签形状]\n  id7{id7:菱形}\n  id8{{id8:六角形}}\n  id5 --&gt; id6 --&gt; id7 --&gt; id8\n  id9[/id9:平行四边形/]\n  id10[\\id10:平行四边形\\]\n  id11[/id11:梯形\\]\n  id12[\\id12:倒梯形/]\n  id13(((id13:双环圆形)))\n  id9 --&gt; id10 --&gt; id11 --&gt; id12 --&gt; id13\n```\n\n\n\nflowchart LR\n  id1(id1:圆角长方形)\n  id2([id2:椭圆形])\n\n  id3[[id3:卷轴形状]]\n  id4[(id4:数据库形状)]\n  id1 --&gt; id2 --&gt; id3 --&gt; id4\n  id5((id5:圆形))\n  id6&gt;id6:标签形状]\n  id7{id7:菱形}\n  id8{{id8:六角形}}\n  id5 --&gt; id6 --&gt; id7 --&gt; id8\n  id9[/id9:平行四边形/]\n  id10[\\id10:平行四边形\\]\n  id11[/id11:梯形\\]\n  id12[\\id12:倒梯形/]\n  id13(((id13:双环圆形)))\n  id9 --&gt; id10 --&gt; id11 --&gt; id12 --&gt; id13"
+  },
+  {
+    "objectID": "notes/2023-10-25-quarto-flowchart.html#箭头或连接线段",
+    "href": "notes/2023-10-25-quarto-flowchart.html#箭头或连接线段",
+    "title": "Quarto文档使用Mermaid绘制流程图",
+    "section": "箭头或连接线段",
+    "text": "箭头或连接线段\n节点之间可以通过箭头或者线段连接起来，mermaid支持指定不同类型的箭头或者线段，或者箭头中间穿插文本。\n写法： 带箭头，节点A --&gt; 节点B， 或者不带箭头（线段连接） 节点A — 节点B\n也可以在连接线段中间添加文字\n写法： 带箭头：节点A --&gt;|线段文本|节点B， 不带箭头：节点A --|线段文本|--节点B\n\n```{mermaid}\nflowchart LR\n  A --&gt; B\n  C --- D\n  G --&gt;|线段文本|H\n  G1 --线段文本--&gt;H1\n  E ---|线段文本|F\n  J1 -.-&gt; J2\n  J3 -.虚线文本.-&gt;J4\n  K1 ==&gt; K2\n  k3 ==加粗文本==&gt;K4\n  L1 ~~~ L2\n  A1--text--&gt;B1--text2--&gt;C1\n```\n\n\n\nflowchart LR\n  A --&gt; B\n  C --- D\n  G --&gt;|线段文本|H\n  G1 --线段文本--&gt;H1\n  E ---|线段文本|F\n  J1 -.-&gt; J2\n  J3 -.虚线文本.-&gt;J4\n  K1 ==&gt; K2\n  k3 ==加粗文本==&gt;K4\n  L1 ~~~ L2\n  A1--text--&gt;B1--text2--&gt;C1"
+  },
+  {
+    "objectID": "notes/2023-10-25-quarto-flowchart.html#流程图方向",
+    "href": "notes/2023-10-25-quarto-flowchart.html#流程图方向",
+    "title": "Quarto文档使用Mermaid绘制流程图",
+    "section": "流程图方向",
+    "text": "流程图方向\nflowchart 空格 方向关键词\n方向关键词的选项可以有以下几种：\n\nLR 从左至右\nRL 从右至左\nTD 从上到下\nBT 从下到上"
+  },
+  {
+    "objectID": "notes/2023-10-25-quarto-flowchart.html#连接的长短",
+    "href": "notes/2023-10-25-quarto-flowchart.html#连接的长短",
+    "title": "Quarto文档使用Mermaid绘制流程图",
+    "section": "连接的长短",
+    "text": "连接的长短\n流程图中的每个节点最终都会被分配到呈现图中的一个等级，即一个垂直或水平级别（取决于流程图的方向），这是根据其连接的节点来确定的。默认情况下，连接可以跨越任意数量的等级，但您可以通过在链接定义中添加额外的破折号来要求某个连接比其他链接更长。\n在下面的示例中，从节点B到节点E的链接中添加了两个额外的破折号，以使其跨越比常规链接多两个等级：\n\n```{mermaid}\nflowchart TD\n    A[Start] --&gt; B{Is it?}\n    B --&gt;|Yes| C[OK]\n    C --&gt; D[Rethink]\n    D --&gt; B\n    B ----&gt;|No| E[End]\n```\n\n\n\nflowchart TD\n    A[Start] --&gt; B{Is it?}\n    B --&gt;|Yes| C[OK]\n    C --&gt; D[Rethink]\n    D --&gt; B\n    B ----&gt;|No| E[End]\n\n\n\n\n\n\n\n\n长度\n1\n2\n3\n\n\n\n\n正常\n---\n----\n-----\n\n\n正常带箭头\n--&gt;\n---&gt;\n----&gt;\n\n\n加粗\n===\n===\n====\n\n\n加粗带箭头\n==&gt;\n===&gt;\n====&gt;\n\n\n虚线\n-.-\n-..-\n-…-\n\n\n虚线带箭头\n-.-&gt;\n-..-&gt;\n-…-&gt;"
+  },
+  {
+    "objectID": "notes/2023-10-25-quarto-flowchart.html#箭头或连接线段的长短",
+    "href": "notes/2023-10-25-quarto-flowchart.html#箭头或连接线段的长短",
+    "title": "Quarto文档使用Mermaid绘制流程图",
+    "section": "箭头或连接线段的长短",
+    "text": "箭头或连接线段的长短\n流程图中的每个节点最终都会被分配到呈现图中的一个等级，即一个垂直或水平级别（取决于流程图的方向），这是根据其连接的节点来确定的。默认情况下，连接可以跨越任意数量的等级，但您可以通过在链接定义中添加额外的破折号来要求某个连接比其他链接更长。\n在下面的示例中，从节点B到节点E的链接中添加了两个额外的破折号，以使其跨越比常规链接多两个等级：\n\n```{mermaid}\nflowchart TD\n    A[Start] --&gt; B{Is it?}\n    B --&gt;|Yes| C[OK]\n    C --&gt; D[Rethink]\n    D --&gt; B\n    B ----&gt;|No| E[End]\n```\n\n\n\nflowchart TD\n    A[Start] --&gt; B{Is it?}\n    B --&gt;|Yes| C[OK]\n    C --&gt; D[Rethink]\n    D --&gt; B\n    B ----&gt;|No| E[End]\n\n\n\n\n\n\n\n\n长度\n1\n2\n3\n\n\n\n\n正常\n---\n----\n-----\n\n\n正常带箭头\n--&gt;\n---&gt;\n----&gt;\n\n\n加粗\n===\n===\n====\n\n\n加粗带箭头\n==&gt;\n===&gt;\n====&gt;\n\n\n虚线\n-.-\n-..-\n-…-\n\n\n虚线带箭头\n-.-&gt;\n-..-&gt;\n-…-&gt;"
+  },
+  {
+    "objectID": "notes/2023-10-25-quarto-flowchart.html#子流程图",
+    "href": "notes/2023-10-25-quarto-flowchart.html#子流程图",
+    "title": "Quarto文档使用Mermaid绘制流程图",
+    "section": "子流程图",
+    "text": "子流程图\nMermaid在绘制流程图时允许我们添一个或多个子流程图。具体方式如下：\nsubgraph title\n  graph definition\nend\n下面是一个包含三个子图的流程图\n\n```{mermaid}\nflowchart TB\n    c1--&gt;b1\n    subgraph one\n    a1--&gt;a2\n    end\n    subgraph two\n    b1--&gt;b2\n    end\n    subgraph three\n    c1--&gt;c2\n    end\n```\n\n\n\nflowchart TB\n    c1--&gt;b1\n    subgraph one\n    a1--&gt;a2\n    end\n    subgraph two\n    b1--&gt;b2\n    end\n    subgraph three\n    c1--&gt;c2\n    end"
+  },
+  {
+    "objectID": "notes/2023-10-25-quarto-flowchart.html#子流程图的方向",
+    "href": "notes/2023-10-25-quarto-flowchart.html#子流程图的方向",
+    "title": "Quarto文档使用Mermaid绘制流程图",
+    "section": "子流程图的方向",
+    "text": "子流程图的方向\n使用流程图类型的图形，您可以使用direction语句来设置子图呈现的方向，就像在这个示例中一样。\n\n```{mermaid}\nflowchart LR\n  subgraph TOP\n    direction TB\n    subgraph B1\n        direction RL\n        i1 --&gt;f1\n    end\n    subgraph B2\n        direction BT\n        i2 --&gt;f2\n    end\n  end\n  A --&gt; TOP --&gt; B\n  B1 --&gt; B2\n```\n\n\n\nflowchart LR\n  subgraph TOP\n    direction TB\n    subgraph B1\n        direction RL\n        i1 --&gt;f1\n    end\n    subgraph B2\n        direction BT\n        i2 --&gt;f2\n    end\n  end\n  A --&gt; TOP --&gt; B\n  B1 --&gt; B2\n\n\n\n\n\n限制性：如果子图的任何节点与外部相连，子图的方向将被忽略。相反，子图将继承父图的方向：\n\n```{mermaid}\nflowchart LR\n    subgraph subgraph1\n        direction TB\n        top1[top] --&gt; bottom1[bottom]\n    end\n    subgraph subgraph2\n        direction TB\n        top2[top] --&gt; bottom2[bottom]\n    end\n    %% ^ These subgraphs are identical, except for the links to them:\n\n    %% Link *to* subgraph1: subgraph1 direction is mantained\n    outside --&gt; subgraph1\n    %% Link *within* subgraph2:\n    %% subgraph2 inherits the direction of the top-level graph (LR)\n    outside ---&gt; top2\n```\n\n\n\nflowchart LR\n    subgraph subgraph1\n        direction TB\n        top1[top] --&gt; bottom1[bottom]\n    end\n    subgraph subgraph2\n        direction TB\n        top2[top] --&gt; bottom2[bottom]\n    end\n    %% ^ These subgraphs are identical, except for the links to them:\n\n    %% Link *to* subgraph1: subgraph1 direction is mantained\n    outside --&gt; subgraph1\n    %% Link *within* subgraph2:\n    %% subgraph2 inherits the direction of the top-level graph (LR)\n    outside ---&gt; top2"
+  },
+  {
+    "objectID": "notes/2023-10-25-quarto-flowchart.html#交互",
+    "href": "notes/2023-10-25-quarto-flowchart.html#交互",
+    "title": "Quarto文档使用Mermaid绘制流程图",
+    "section": "交互",
+    "text": "交互\nMermaid允许我们添加一个点击事件到一个节点上，通过点击可以触发JavaScript或者导航到一个外部链接，并在新的浏览器标签中查看结果。\n\n```{mermaid}\nflowchart LR\n    A--&gt;B\n    B--&gt;C\n    C--&gt;D\n    click B \"https://www.github.com\" \"This is a tooltip for a link\"\n    click D href \"https://www.github.com\" \"This is a tooltip for a link\"\n```\n\n\n\nflowchart LR\n    A--&gt;B\n    B--&gt;C\n    C--&gt;D\n    click B \"https://www.github.com\" \"This is a tooltip for a link\"\n    click D href \"https://www.github.com\" \"This is a tooltip for a link\""
+  },
+  {
+    "objectID": "notes/2023-10-25-quarto-flowchart.html#注释",
+    "href": "notes/2023-10-25-quarto-flowchart.html#注释",
+    "title": "Quarto文档使用Mermaid绘制流程图",
+    "section": "注释",
+    "text": "注释\n在流程图中可以输入注释，这些注释将被解析器忽略。注释需要单独位于一行，并且必须以 %%（双百分号）开头。从注释开始到下一个换行符之间的任何文本都将被视为注释，包括任何流程语法。\n\n```{mermaid}\nflowchart LR\n%% 这里都是注释\n   A -- text --&gt; B -- text2 --&gt; C\n```\n\n\n\nflowchart LR\n%% 这里都是注释\n   A -- text --&gt; B -- text2 --&gt; C"
   }
 ]
