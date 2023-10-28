@@ -3,12 +3,6 @@ title: "英语学习计划"
 author: "陈琼"
 date: 2023-10-26
 categories: ["英语学习"]
-format:
-  html: default
-  pdf:
-    documentclass: article
-    mainfont: STKaiti
-    CJKmainfont: STKaiti
 ---
 
 我在油管频道上看到一位外教老师帮助非英语母语者制定的英语学习计划，我觉得很好。我也一直想把我的英语口语进行一个提升，特别是小果仁开始学习英语之后，我也想给她做一个榜样，希望通过我的坚持学习能够让她在学习语言的道路上能够坚持下去。我根据自己的实际情况对这个计划进行了调整，希望自己能坚持学习下去。
