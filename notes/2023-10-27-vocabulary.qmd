@@ -4,12 +4,6 @@ author: "陈琼"
 date: 2023-10-27
 categories: ["英语学习"]
 tags: ["生词本"]
-format:
-  html: default
-  pdf:
-    documentclass: article
-    mainfont: STKaiti
-    CJKmainfont: STKaiti
 ---
 
 这篇博文用来记录我在英语学习过程中遇到的一些比较陌生的词汇，以便随后翻看学习。
@@ -29,4 +23,43 @@ format:
 - clean shaven
 - grab your things
 
+:::
+
+
+## [using things](https://youtu.be/F03udaSuULg)
+
+::: {.li-cards}
+- extend
+- retract
+- stack
+- insert
+  - insert the pen to the cap
+- crumple
+  - crumple the paper
+- eject
+  - eject button, press the eject button to eject the DVD
+- rearrange
+  - rearrange something
+- clamp
+  - I need a light that could clamp to my desk
+- fold up
+  - fold up the table
+- put up
+  - attach something up to something
+- wind up
+- crank
+  - crank the wheel
+- slide 
+  - you can slide a door open
+- zip/unzip
+  - zip up the 
+- spin
+  - spin the tire, if you spin somethins, something can turn
+- box up / unbox
+  - put something in box, box up all these stuff
+- tighten / loosen
+- wrap
+  - wrap something, put something around it
+- plunge
+  - if your toilet doesn't flush 
 :::
