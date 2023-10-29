@@ -118,3 +118,21 @@ li {
     }
   }
 }
+
+
+.list_title {
+      font-size: 24px;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+    }
+    
+.list_intro {
+  font-size: 15px;
+  font-weight: normal;
+  text-indent: 2em; 
+  background-color: #f1faee;
+  padding: 10px 15% 10px 15%;
+  display: flex;
+  justify-content: center;
+}
