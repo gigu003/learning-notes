@@ -63,3 +63,24 @@ tags: ["生词本"]
 - plunge
   - if your toilet doesn't flush 
 :::
+
+## Tree related words
+
+::: {.li-cards}
+- trunk
+  - 树干
+- branch
+  - 树枝
+- twig
+  - 小树枝
+- leaf
+  - 树叶
+- tree scar
+  - 树疤
+- tree knot
+  - 树结
+- blossom
+  - 树开花
+- bark
+  - 树皮
+:::
