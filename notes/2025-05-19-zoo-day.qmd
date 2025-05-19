@@ -1,7 +1,8 @@
 ---
 title: A Special Day at the Zoo
-author: 'Qiong Chen'
-categories: [英语学习]
+date: today
+date-modified: last-modified
+categories: [英语学习, 每日阅读]
 ---
 
 ## Reading
